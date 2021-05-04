@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "dealership-portal",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "dealership-portal": {
+      "projectType": "application",
+      "root": "apps/dealership-portal",
+      "sourceRoot": "apps/dealership-portal/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/dealership-portal",
+            "index": "apps/dealership-portal/src/index.html",
+            "main": "apps/dealership-portal/src/main.ts",
+            "polyfills": "apps/dealership-portal/src/polyfills.ts",
+            "tsConfig": "apps/dealership-portal/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/dealership-portal/src/favicon.ico",
+              "apps/dealership-portal/src/assets"
+            ],
+            "styles": ["apps/dealership-portal/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dealership-portal/src/environments/environment.ts",
+                  "with": "apps/dealership-portal/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dealership-portal:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dealership-portal:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dealership-portal:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/dealership-portal/src/**/*.ts",
+              "apps/dealership-portal/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/dealership-portal"],
+          "options": {
+            "jestConfig": "apps/dealership-portal/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "dealership-portal-e2e": {
+      "root": "apps/dealership-portal-e2e",
+      "sourceRoot": "apps/dealership-portal-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/dealership-portal-e2e/cypress.json",
+            "tsConfig": "apps/dealership-portal-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dealership-portal:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dealership-portal:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/dealership-portal-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
