@@ -1,0 +1,6 @@
+{
+  "name": "dealership-portal",
+  "devDependencies": {
+    "@capacitor/cli": "^2.4.5"
+  }
+}

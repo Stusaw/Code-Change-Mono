@@ -1,0 +1,7 @@
+{
+  "name": "dealership-portal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
