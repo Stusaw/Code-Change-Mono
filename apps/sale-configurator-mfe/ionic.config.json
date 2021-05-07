@@ -1,7 +1,0 @@
-{
-  "name": "sale-configurator-mfe",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

@@ -1,0 +1,33 @@
+<ion-content>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title size="large">Blank</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <div id="container">
+        <h1>Welcome to dealership-portal!</h1>
+        <p>Home - This is a feature library from the mono-repo!</p>
+        <strong>Link to a remote micro-frontend?</strong>
+        <p>
+            <a routerLink="/mfe">Let's go!!</a><br />
+            <a routerLink="/dashboard">Dashboard</a>
+        </p>
+
+
+        <mat-card>
+            <mat-card-title>Login</mat-card-title>
+            <mat-card-content>
+                <form fxLayout="column" fxLayoutAlign="center none">
+                    <mat-form-field>
+                        <input matInput placeholder="username" type="text" #username>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="password" type="text" #password>
+                    </mat-form-field>
+                </form>
+                <button mat-raised-button>login</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</ion-content>

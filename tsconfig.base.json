@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@dealership-portal/feature-dashboard": [
+        "libs/dealership-portal/feature-dashboard/src/index.ts"
+      ],
+      "@dealership-portal/feature-home": [
+        "libs/dealership-portal/feature-home/src/index.ts"
+      ],
+      "@shared-ui-material-design": ["libs/shared/ui/material-design/src/index.ts"]
+    }
+  },
+  "angularCompilerOptions":{
+    "strictTemplates": true
   },
   "exclude": ["node_modules", "tmp"]
 }

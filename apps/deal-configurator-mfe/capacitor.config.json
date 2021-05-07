@@ -1,0 +1,13 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "deal-configurator-mfe",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "../../dist/apps/deal-configurator-mfe",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

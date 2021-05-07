@@ -14,7 +14,16 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomePageModule),
+      import('@dealership-portal/feature-home').then(
+        (m) => m.FeatureHomeModule
+      ),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('@dealership-portal/feature-dashboard').then(
+        (m) => m.FeatureDashboardModule
+      ),
   },
   {
     path: '',

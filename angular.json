@@ -25,7 +25,8 @@
     "@nrwl/angular:library": {
       "style": "scss",
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "strict": true
     },
     "@nrwl/angular:component": {
       "style": "scss"
@@ -57,6 +58,7 @@
             ],
             "styles": [
               "apps/dealership-portal/src/styles.scss",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               {
                 "input": "apps\\dealership-portal/src/theme/variables.scss"
               }
@@ -126,9 +128,7 @@
         },
         "test": {
           "builder": "ngx-build-plus:karma",
-          "outputs": [
-            "coverage/apps/dealership-portal"
-          ],
+          "outputs": ["coverage/apps/dealership-portal"],
           "options": {
             "jestConfig": "apps/dealership-portal/jest.config.js",
             "passWithNoTests": true,
@@ -239,30 +239,139 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/dealership-portal-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/dealership-portal-e2e/**/*.{js,ts}"]
           }
         }
       }
     },
-    "sale-configurator-mfe": {
+    "dealership-portal-feature-dashboard": {
+      "projectType": "library",
+      "root": "libs/dealership-portal/feature-dashboard",
+      "sourceRoot": "libs/dealership-portal/feature-dashboard/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/dealership-portal/feature-dashboard/tsconfig.lib.json",
+            "project": "libs/dealership-portal/feature-dashboard/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/dealership-portal/feature-dashboard/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dealership-portal/feature-dashboard/src/**/*.ts",
+              "libs/dealership-portal/feature-dashboard/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dealership-portal/feature-dashboard"],
+          "options": {
+            "jestConfig": "libs/dealership-portal/feature-dashboard/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "dealership-portal-feature-home": {
+      "projectType": "library",
+      "root": "libs/dealership-portal/feature-home",
+      "sourceRoot": "libs/dealership-portal/feature-home/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/dealership-portal/feature-home/tsconfig.lib.json",
+            "project": "libs/dealership-portal/feature-home/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/dealership-portal/feature-home/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dealership-portal/feature-home/src/**/*.ts",
+              "libs/dealership-portal/feature-home/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dealership-portal/feature-home"],
+          "options": {
+            "jestConfig": "libs/dealership-portal/feature-home/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-ui-material-design": {
+      "projectType": "library",
+      "root": "libs/shared/ui/material-design",
+      "sourceRoot": "libs/shared/ui/material-design/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/shared/ui/material-design/tsconfig.lib.json",
+            "project": "libs/shared/ui/material-design/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/material-design/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/material-design/src/**/*.ts",
+              "libs/shared/ui/material-design/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/material-design"],
+          "options": {
+            "jestConfig": "libs/shared/ui/material-design/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "customer-portal": {
       "projectType": "application",
-      "root": "apps/sale-configurator-mfe",
-      "sourceRoot": "apps/sale-configurator-mfe/src",
+      "root": "apps/customer-portal",
+      "sourceRoot": "apps/customer-portal/src",
       "prefix": "code-change",
       "architect": {
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/apps/sale-configurator-mfe",
-            "index": "apps/sale-configurator-mfe/src/index.html",
-            "main": "apps/sale-configurator-mfe/src/main.ts",
-            "polyfills": "apps/sale-configurator-mfe/src/polyfills.ts",
-            "tsConfig": "apps/sale-configurator-mfe/tsconfig.app.json",
+            "outputPath": "dist/apps/customer-portal",
+            "index": "apps/customer-portal/src/index.html",
+            "main": "apps/customer-portal/src/main.ts",
+            "polyfills": "apps/customer-portal/src/polyfills.ts",
+            "tsConfig": "apps/customer-portal/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/sale-configurator-mfe/src/assets",
+              "apps/customer-portal/src/assets",
               {
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
@@ -270,20 +379,21 @@
               }
             ],
             "styles": [
-              "apps/sale-configurator-mfe/src/styles.scss",
+              "apps/customer-portal/src/styles.scss",
               {
-                "input": "apps\\sale-configurator-mfe/src/theme/variables.scss"
+                "input": "apps\\customer-portal/src/theme/variables.scss"
               }
             ],
             "scripts": [],
-            "extraWebpackConfig": "apps/sale-configurator-mfe/webpack.config.js"
+            "extraWebpackConfig": "apps/customer-portal/webpack.config.js",
+            "commonChunk": false
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/sale-configurator-mfe/src/environments/environment.ts",
-                  "with": "apps/sale-configurator-mfe/src/environments/environment.prod.ts"
+                  "replace": "apps/customer-portal/src/environments/environment.ts",
+                  "with": "apps/customer-portal/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -305,48 +415,46 @@
                   "maximumError": "10kb"
                 }
               ],
-              "extraWebpackConfig": "apps/sale-configurator-mfe/webpack.prod.config.js"
+              "extraWebpackConfig": "apps/customer-portal/webpack.prod.config.js"
             }
           }
         },
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
-            "browserTarget": "sale-configurator-mfe:build",
-            "extraWebpackConfig": "apps/sale-configurator-mfe/webpack.config.js",
-            "port": 4300
+            "browserTarget": "customer-portal:build",
+            "extraWebpackConfig": "apps/customer-portal/webpack.config.js",
+            "port": 4400
           },
           "configurations": {
             "production": {
-              "browserTarget": "sale-configurator-mfe:build:production",
-              "extraWebpackConfig": "apps/sale-configurator-mfe/webpack.prod.config.js"
+              "browserTarget": "customer-portal:build:production",
+              "extraWebpackConfig": "apps/customer-portal/webpack.prod.config.js"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sale-configurator-mfe:build"
+            "browserTarget": "customer-portal:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/sale-configurator-mfe/src/**/*.ts",
-              "apps/sale-configurator-mfe/src/**/*.html"
+              "apps/customer-portal/src/**/*.ts",
+              "apps/customer-portal/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "ngx-build-plus:karma",
-          "outputs": [
-            "coverage/apps/sale-configurator-mfe"
-          ],
+          "outputs": ["coverage/apps/customer-portal"],
           "options": {
-            "jestConfig": "apps/sale-configurator-mfe/jest.config.js",
+            "jestConfig": "apps/customer-portal/jest.config.js",
             "passWithNoTests": true,
-            "extraWebpackConfig": "apps/sale-configurator-mfe/webpack.config.js"
+            "extraWebpackConfig": "apps/customer-portal/webpack.config.js"
           }
         },
         "cap": {
@@ -432,30 +540,238 @@
         }
       }
     },
-    "sale-configurator-mfe-e2e": {
-      "root": "apps/sale-configurator-mfe-e2e",
-      "sourceRoot": "apps/sale-configurator-mfe-e2e/src",
+    "customer-portal-e2e": {
+      "root": "apps/customer-portal-e2e",
+      "sourceRoot": "apps/customer-portal-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/sale-configurator-mfe-e2e/cypress.json",
-            "tsConfig": "apps/sale-configurator-mfe-e2e/tsconfig.e2e.json",
-            "devServerTarget": "sale-configurator-mfe:serve"
+            "cypressConfig": "apps/customer-portal-e2e/cypress.json",
+            "tsConfig": "apps/customer-portal-e2e/tsconfig.e2e.json",
+            "devServerTarget": "customer-portal:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sale-configurator-mfe:serve:production"
+              "devServerTarget": "customer-portal:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["apps/customer-portal-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "deal-configurator-mfe": {
+      "projectType": "application",
+      "root": "apps/deal-configurator-mfe",
+      "sourceRoot": "apps/deal-configurator-mfe/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/apps/deal-configurator-mfe",
+            "index": "apps/deal-configurator-mfe/src/index.html",
+            "main": "apps/deal-configurator-mfe/src/main.ts",
+            "polyfills": "apps/deal-configurator-mfe/src/polyfills.ts",
+            "tsConfig": "apps/deal-configurator-mfe/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/deal-configurator-mfe/src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
+            ],
+            "styles": [
+              "apps/deal-configurator-mfe/src/styles.scss",
+              {
+                "input": "apps\\deal-configurator-mfe/src/theme/variables.scss"
+              }
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "apps/deal-configurator-mfe/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/deal-configurator-mfe/src/environments/environment.ts",
+                  "with": "apps/deal-configurator-mfe/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "extraWebpackConfig": "apps/deal-configurator-mfe/webpack.prod.config.js"
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "deal-configurator-mfe:build",
+            "extraWebpackConfig": "apps/deal-configurator-mfe/webpack.config.js",
+            "port": 4300
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "deal-configurator-mfe:build:production",
+              "extraWebpackConfig": "apps/deal-configurator-mfe/webpack.prod.config.js"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "deal-configurator-mfe:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "apps/sale-configurator-mfe-e2e/**/*.{js,ts}"
+              "apps/deal-configurator-mfe/src/**/*.ts",
+              "apps/deal-configurator-mfe/src/**/*.html"
             ]
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "outputs": ["coverage/apps/deal-configurator-mfe"],
+          "options": {
+            "jestConfig": "apps/deal-configurator-mfe/jest.config.js",
+            "passWithNoTests": true,
+            "extraWebpackConfig": "apps/deal-configurator-mfe/webpack.config.js"
+          }
+        },
+        "cap": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "--help"
+          }
+        },
+        "add": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "add",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "add ios"
+            },
+            "android": {
+              "cmd": "add android"
+            }
+          }
+        },
+        "copy": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "copy",
+            "packageInstall": false
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "copy ios"
+            },
+            "android": {
+              "cmd": "copy android"
+            }
+          }
+        },
+        "open": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "open",
+            "packageInstall": false
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "open ios"
+            },
+            "android": {
+              "cmd": "open android"
+            }
+          }
+        },
+        "sync": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "sync",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "sync ios"
+            },
+            "android": {
+              "cmd": "sync android"
+            }
+          }
+        },
+        "update": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "update",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "update ios"
+            },
+            "android": {
+              "cmd": "update android"
+            }
+          }
+        }
+      }
+    },
+    "deal-configurator-mfe-e2e": {
+      "root": "apps/deal-configurator-mfe-e2e",
+      "sourceRoot": "apps/deal-configurator-mfe-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/deal-configurator-mfe-e2e/cypress.json",
+            "tsConfig": "apps/deal-configurator-mfe-e2e/tsconfig.e2e.json",
+            "devServerTarget": "deal-configurator-mfe:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "deal-configurator-mfe:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/deal-configurator-mfe-e2e/**/*.{js,ts}"]
           }
         }
       }

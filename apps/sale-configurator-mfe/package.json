@@ -1,6 +1,0 @@
-{
-  "name": "sale-configurator-mfe",
-  "devDependencies": {
-    "@capacitor/cli": "^2.4.5"
-  }
-}

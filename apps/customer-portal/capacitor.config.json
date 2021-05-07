@@ -1,0 +1,13 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "customer-portal",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "../../dist/apps/customer-portal",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
