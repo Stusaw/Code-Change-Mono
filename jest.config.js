@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/dealership-portal/feature-home',
     '<rootDir>/libs/shared/ui/material-design',
     '<rootDir>/apps/customer-portal',
+    '<rootDir>/libs/deal-configurator-mfe/feature-dealcard',
   ],
 };

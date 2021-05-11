@@ -21,7 +21,7 @@ module.exports = {
       name: 'mfe',
       filename: 'remoteEntry.js',
       exposes: {
-        './Module': './apps/deal-configurator-mfe/src/app/home/home.module.ts',
+        './Module': './libs/deal-configurator-mfe/feature-dealcard/src/index.ts',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },

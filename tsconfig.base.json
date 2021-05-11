@@ -21,10 +21,15 @@
       "@dealership-portal/feature-home": [
         "libs/dealership-portal/feature-home/src/index.ts"
       ],
-      "@shared-ui-material-design": ["libs/shared/ui/material-design/src/index.ts"]
+      "@shared-ui-material-design": [
+        "libs/shared/ui/material-design/src/index.ts"
+      ],
+      "@deal-configurator-mfe/feature-dealcard": [
+        "libs/deal-configurator-mfe/feature-dealcard/src/index.ts"
+      ]
     }
   },
-  "angularCompilerOptions":{
+  "angularCompilerOptions": {
     "strictTemplates": true
   },
   "exclude": ["node_modules", "tmp"]

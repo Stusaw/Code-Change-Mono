@@ -14,12 +14,12 @@ const routes: Routes = [
       import('./folder/folder.module').then((m) => m.FolderPageModule),
   },
   {
-    path: 'mfe',
+    path: 'mfe/:dealId',
     loadChildren: () =>
       loadRemoteModule({
         remoteName: 'mfe',
         exposedModule: './Module',
-      }).then((m) => m.HomePageModule),
+      }).then((m) => m.FeatureDealcardModule),
   },
 ];
 

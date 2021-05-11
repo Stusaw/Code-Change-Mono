@@ -1,14 +1,9 @@
 {
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "code-change",
   "tasksRunnerOptions": {
     "default": {
@@ -22,35 +17,24 @@
     }
   },
   "projects": {
-    "dealership-portal": {
-      "tags": []
-    },
+    "dealership-portal": { "tags": [] },
     "dealership-portal-e2e": {
       "tags": [],
       "implicitDependencies": ["dealership-portal"]
     },
-    "dealership-portal-feature-dashboard": {
-      "tags": []
-    },
-    "dealership-portal-feature-home": {
-      "tags": []
-    },
-    "shared-ui-material-design": {
-      "tags": []
-    },
-    "customer-portal": {
-      "tags": []
-    },
+    "dealership-portal-feature-dashboard": { "tags": [] },
+    "dealership-portal-feature-home": { "tags": [] },
+    "shared-ui-material-design": { "tags": [] },
+    "customer-portal": { "tags": [] },
     "customer-portal-e2e": {
       "tags": [],
       "implicitDependencies": ["customer-portal"]
     },
-    "deal-configurator-mfe": {
-      "tags": []
-    },
+    "deal-configurator-mfe": { "tags": [] },
     "deal-configurator-mfe-e2e": {
       "tags": [],
       "implicitDependencies": ["deal-configurator-mfe"]
-    }
+    },
+    "deal-configurator-mfe-feature-dealcard": { "tags": [] }
   }
 }

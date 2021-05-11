@@ -4,12 +4,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'mfe',
+    path: 'mfe/:agentId',
     loadChildren: () =>
       loadRemoteModule({
         remoteName: 'mfe',
         exposedModule: './Module',
-      }).then((m) => m.HomePageModule),
+      }).then((m) => m.FeatureDealcardModule),
   },
   {
     path: 'home',
@@ -27,6 +27,11 @@ const routes: Routes = [
   },
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: '*',
     redirectTo: 'home',
     pathMatch: 'full',
   },

@@ -775,6 +775,43 @@
           }
         }
       }
+    },
+    "deal-configurator-mfe-feature-dealcard": {
+      "projectType": "library",
+      "root": "libs/deal-configurator-mfe/feature-dealcard",
+      "sourceRoot": "libs/deal-configurator-mfe/feature-dealcard/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/deal-configurator-mfe/feature-dealcard/tsconfig.lib.json",
+            "project": "libs/deal-configurator-mfe/feature-dealcard/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/deal-configurator-mfe/feature-dealcard/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/deal-configurator-mfe/feature-dealcard/src/**/*.ts",
+              "libs/deal-configurator-mfe/feature-dealcard/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/deal-configurator-mfe/feature-dealcard"],
+          "options": {
+            "jestConfig": "libs/deal-configurator-mfe/feature-dealcard/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "defaultProject": "dealership-portal"

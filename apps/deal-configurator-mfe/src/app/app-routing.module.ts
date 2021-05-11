@@ -3,13 +3,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'dealcard/:agentId',
     loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomePageModule),
+      import('@deal-configurator-mfe/feature-dealcard').then((m) => m.FeatureDealcardModule),
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'dealcard',
     pathMatch: 'full',
   },
 ];
