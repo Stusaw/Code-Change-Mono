@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'dealcard/:agentId',
+    path: 'dealcard',
     loadChildren: () =>
       import('@deal-configurator-mfe/feature-dealcard').then((m) => m.FeatureDealcardModule),
   },

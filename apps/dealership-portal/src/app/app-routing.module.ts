@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'mfe/:agentId',
+    path: 'mfe',
     loadChildren: () =>
       loadRemoteModule({
         remoteName: 'mfe',

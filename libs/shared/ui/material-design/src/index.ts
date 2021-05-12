@@ -1,1 +1,1 @@
-export * from './lib/ui/material-design.module';
+export * from './lib/material-design.module';
