@@ -7,5 +7,8 @@ module.exports = {
     '<rootDir>/libs/shared/ui/material-design',
     '<rootDir>/apps/customer-portal',
     '<rootDir>/libs/deal-configurator-mfe/feature-dealcard',
+    '<rootDir>/libs/shared/core',
+    '<rootDir>/libs/shared/domain',
+    '<rootDir>/libs/shared/domain/src/lib/finance',
   ],
 };
