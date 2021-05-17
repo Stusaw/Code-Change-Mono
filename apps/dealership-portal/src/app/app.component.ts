@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FinanceProductService, IFinanceProduct } from '@shared-domain-finance';
+import { Component, Inject } from '@angular/core';
+import { FinanceProductService } from '@shared-domain-finance';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,13 @@ import { FinanceProductService, IFinanceProduct } from '@shared-domain-finance';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private _financeService: FinanceProductService) {
-    this._financeService.sayHello();
-    let product: IFinanceProduct;
+  constructor(
+    @Inject('Admin.FinanceProductService')
+    private _adminFinanceService: FinanceProductService,
+    @Inject('CustomerFinanceProductService')
+    private _customerFinanceService: FinanceProductService
+  ) {
+    this._adminFinanceService.sayHello();
+    this._customerFinanceService.sayHello();
   }
 }

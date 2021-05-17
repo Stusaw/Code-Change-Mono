@@ -1,20 +1,22 @@
-import { Injectable } from '@angular/core';
-import { FinanceProductApiService } from '@shared-domain-finance';
+import { Inject, Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class FinanceProductService {
-  constructor(private _financeProductApiService: FinanceProductApiService) {}
+  constructor(
+    @Inject('role') private role: string,
+    // private _financeProductApiService: FinanceProductApiService
+  ) 
+  {}
 
   sayHello() {
     console.log('Hello from FinanceService');
+    console.log('Role', this.role);
   }
 
-  activateVariant(productKey: string, variantKey: string) {
-    return this._financeProductApiService.activateVariant(
-      productKey,
-      variantKey
-    );
-  }
+  // activateVariant(productKey: string, variantKey: string) {
+  //   return this._financeProductApiService.activateVariant(
+  //     productKey,
+  //     variantKey
+  //   );
+  // }
 }

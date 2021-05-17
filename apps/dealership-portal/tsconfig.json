@@ -12,5 +12,13 @@
     {
       "path": "./tsconfig.editor.json"
     }
-  ]
+  ],
+  "paths": {
+    "@env": [
+      "environments"
+    ],
+    "@env/*": [
+      "environments/*"
+    ]
+  }
 }

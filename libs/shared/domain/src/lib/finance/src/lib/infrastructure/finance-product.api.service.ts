@@ -3,26 +3,24 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { env } from '../../../../env';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class FinanceProductApiService {
   constructor(
-    @Inject(HttpClient) private _httpClient: HttpClient,
-    @Inject('env') private env: env
-  ) {}
+    private _httpClient: HttpClient,
+    @Inject('env') private env: env,
+    @Inject('role') private role: string
+  ) {
+    console.log(env.apiUrl);
+    console.log(
+      `${this.env.apiUrl}/${this.role}/FinanceProduct/ActivateVariant`
+    );
+  }
 
-  /**
-   * Activates a finance product variant
-   * @param productKey A finance product key
-   * @param variantKey A finance product variant key
-   * @returns void
-   */
   activateVariant(productKey: string, variantKey: string): Observable<void> {
     let params = { productKey: productKey, variantKey: variantKey };
     return this._httpClient.request<void>(
       'POST',
-      `${this.env.apiUrl}/Admin/FinanceProduct/ActivateVariant`,
+      `${this.env.apiUrl}/${this.role}/FinanceProduct/ActivateVariant`,
       {
         params: params,
       }

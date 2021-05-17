@@ -1,4 +1,9 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import {
+  ModuleWithProviders,
+  NgModule,
+  Optional,
+  SkipSelf
+} from '@angular/core';
 import { DomainModule } from '@shared-domain';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
@@ -7,7 +12,13 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
-    console.log('Core module constructing...');
     throwIfAlreadyLoaded(parentModule, 'CoreModule');
+  }
+
+  static forRoot(environment: any): ModuleWithProviders<CoreModule> {
+    return {
+      ngModule: CoreModule,
+      providers: [{ provide: 'env', useValue: environment }],
+    };
   }
 }

@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { FinanceModule } from '@shared-domain-finance';
 
 @NgModule({
-  imports: [FinanceModule],
+  imports: [
+    FinanceModule.forRoot()
+  ],
 })
-export class DomainModule {}
+export class DomainModule {
+}
