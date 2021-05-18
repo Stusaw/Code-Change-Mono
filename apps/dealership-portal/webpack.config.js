@@ -9,28 +9,25 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: "dealership-portal"
+    uniqueName: "dealership-portal",
+    publicPath: "auto"
   },
   optimization: {
     // Only needed to bypass a temporary bug
-    runtimeChunk: false
+    runtimeChunk: false,
   },
   plugins: [
     new ModuleFederationPlugin({
 
-        // For hosts (please adjust)
-        // remotes: {
-        //     "mfe": "mfe@http://localhost:4300/remoteEntry.js",
-        // },
+      shared: {
+        "@angular/core": { singleton: true, strictVersion: true, requiredVersion: "^12.0.0" },
+        "@angular/common": { singleton: true, strictVersion: true, requiredVersion: "^12.0.0" },
+        "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: "^12.0.0" },
+        "@angular/router": { singleton: true, strictVersion: true, requiredVersion: "^12.0.0" },
 
-        shared: {
-          "@angular/core": { singleton: true, strictVersion: true }, 
-          "@angular/common": { singleton: true, strictVersion: true }, 
-          "@angular/router": { singleton: true, strictVersion: true },
+        ...sharedMappings.getDescriptors()
+      }
 
-          ...sharedMappings.getDescriptors()
-        }
-        
     }),
     sharedMappings.getPlugin(),
   ],

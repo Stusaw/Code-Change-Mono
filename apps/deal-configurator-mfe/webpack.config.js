@@ -10,6 +10,7 @@ sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
 module.exports = {
   output: {
     uniqueName: 'mfe',
+    publicPath: "auto"
   },
   optimization: {
     // Only needed to bypass a temporary bug
@@ -24,9 +25,10 @@ module.exports = {
         './Module': './libs/deal-configurator-mfe/feature-dealcard/src/index.ts',
       },
       shared: {
-        '@angular/core': { singleton: true, strictVersion: true },
-        '@angular/common': { singleton: true, strictVersion: true },
-        '@angular/router': { singleton: true, strictVersion: true },
+        "@angular/core": { singleton: true, strictVersion: true, requiredVersion: "^12.0.0" },
+        "@angular/common": { singleton: true, strictVersion: true, requiredVersion: "^12.0.0" },
+        "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: "^12.0.0" },
+        "@angular/router": { singleton: true, strictVersion: true, requiredVersion: "^12.0.0" },
 
         ...sharedMappings.getDescriptors(),
       },
