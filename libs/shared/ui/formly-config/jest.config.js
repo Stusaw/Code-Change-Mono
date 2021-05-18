@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'shared-domain-finance',
-  preset: '../../../../../../jest.preset.js',
+  displayName: 'shared-ui-formly-config',
+  preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -14,8 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory:
-    '../../../../../../coverage/libs/shared/domain/src/lib/finance',
+  coverageDirectory: '../../../../coverage/libs/shared/ui/formly-config',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',

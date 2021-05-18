@@ -8,11 +8,11 @@ export class FinanceProductApiService {
   constructor(
     private _httpClient: HttpClient,
     @Inject('env') private env: env,
-    @Inject('role') private role: string
+    @Inject('apiAccess') private apiAccess: string
   ) {
     console.log(env.apiUrl);
     console.log(
-      `${this.env.apiUrl}/${this.role}/FinanceProduct/ActivateVariant`
+      `${this.env.apiUrl}/${this.apiAccess}/FinanceProduct/ActivateVariant`
     );
   }
 
@@ -20,7 +20,7 @@ export class FinanceProductApiService {
     let params = { productKey: productKey, variantKey: variantKey };
     return this._httpClient.request<void>(
       'POST',
-      `${this.env.apiUrl}/${this.role}/FinanceProduct/ActivateVariant`,
+      `${this.env.apiUrl}/${this.apiAccess}/FinanceProduct/ActivateVariant`,
       {
         params: params,
       }

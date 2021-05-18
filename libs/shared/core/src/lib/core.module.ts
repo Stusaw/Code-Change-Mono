@@ -8,7 +8,9 @@ import { DomainModule } from '@shared-domain';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
 @NgModule({
-  imports: [DomainModule],
+  imports: [
+    DomainModule
+  ],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

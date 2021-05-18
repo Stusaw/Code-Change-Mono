@@ -61,7 +61,10 @@
     "shared-domain": {
       "tags": []
     },
-    "shared-domain-src-lib-finance": {
+    "shared-domain-finance": {
+      "tags": []
+    },
+    "shared-ui-formly-config": {
       "tags": []
     }
   }

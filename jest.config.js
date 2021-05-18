@@ -10,5 +10,6 @@ module.exports = {
     '<rootDir>/libs/shared/core',
     '<rootDir>/libs/shared/domain',
     '<rootDir>/libs/shared/domain/src/lib/finance',
+    '<rootDir>/libs/shared/ui/formly-config',
   ],
 };

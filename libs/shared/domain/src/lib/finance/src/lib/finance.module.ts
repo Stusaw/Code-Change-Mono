@@ -15,8 +15,8 @@ export class FinanceModule {
       providers: [
         {
           provide: 'Admin.FinanceProductService',
-          useFactory: () =>
-            new FinanceProductService('Admin'),
+          useFactory: (apiService: FinanceProductApiService) =>
+            new FinanceProductService(apiService),
           deps: ['Admin.FinanceProductApiService'],
         },
         {
@@ -26,13 +26,13 @@ export class FinanceModule {
           deps: [HttpClient, 'env'],
         },
         {
-          provide: 'CustomerFinanceProductService',
-          useFactory: () =>
-            new FinanceProductService('Customer'),
-          deps: ['CustomerFinanceProductApiService'],
+          provide: 'Customer.FinanceProductService',
+          useFactory: (apiService: FinanceProductApiService) =>
+            new FinanceProductService(apiService),
+          deps: ['Customer.FinanceProductApiService'],
         },
         {
-          provide: 'CustomerFinanceProductApiService',
+          provide: 'Customer.FinanceProductApiService',
           useFactory: (httpClient: HttpClient, env: env) =>
             new FinanceProductApiService(httpClient, env, 'Customer'),
           deps: [HttpClient, 'env'],

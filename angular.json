@@ -128,9 +128,7 @@
         },
         "test": {
           "builder": "ngx-build-plus:karma",
-          "outputs": [
-            "coverage/apps/dealership-portal"
-          ],
+          "outputs": ["coverage/apps/dealership-portal"],
           "options": {
             "jestConfig": "apps/dealership-portal/jest.config.js",
             "passWithNoTests": true,
@@ -241,9 +239,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/dealership-portal-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/dealership-portal-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -277,9 +273,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/dealership-portal/feature-dashboard"
-          ],
+          "outputs": ["coverage/libs/dealership-portal/feature-dashboard"],
           "options": {
             "jestConfig": "libs/dealership-portal/feature-dashboard/jest.config.js",
             "passWithNoTests": true
@@ -316,9 +310,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/dealership-portal/feature-home"
-          ],
+          "outputs": ["coverage/libs/dealership-portal/feature-home"],
           "options": {
             "jestConfig": "libs/dealership-portal/feature-home/jest.config.js",
             "passWithNoTests": true
@@ -355,9 +347,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/ui/material-design"
-          ],
+          "outputs": ["coverage/libs/shared/ui/material-design"],
           "options": {
             "jestConfig": "libs/shared/ui/material-design/jest.config.js",
             "passWithNoTests": true
@@ -460,9 +450,7 @@
         },
         "test": {
           "builder": "ngx-build-plus:karma",
-          "outputs": [
-            "coverage/apps/customer-portal"
-          ],
+          "outputs": ["coverage/apps/customer-portal"],
           "options": {
             "jestConfig": "apps/customer-portal/jest.config.js",
             "passWithNoTests": true,
@@ -573,9 +561,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/customer-portal-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/customer-portal-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -674,9 +660,7 @@
         },
         "test": {
           "builder": "ngx-build-plus:karma",
-          "outputs": [
-            "coverage/apps/deal-configurator-mfe"
-          ],
+          "outputs": ["coverage/apps/deal-configurator-mfe"],
           "options": {
             "jestConfig": "apps/deal-configurator-mfe/jest.config.js",
             "passWithNoTests": true,
@@ -787,9 +771,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/deal-configurator-mfe-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/deal-configurator-mfe-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -823,9 +805,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/deal-configurator-mfe/feature-dealcard"
-          ],
+          "outputs": ["coverage/libs/deal-configurator-mfe/feature-dealcard"],
           "options": {
             "jestConfig": "libs/deal-configurator-mfe/feature-dealcard/jest.config.js",
             "passWithNoTests": true
@@ -862,9 +842,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/core"
-          ],
+          "outputs": ["coverage/libs/shared/core"],
           "options": {
             "jestConfig": "libs/shared/core/jest.config.js",
             "passWithNoTests": true
@@ -901,9 +879,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/domain"
-          ],
+          "outputs": ["coverage/libs/shared/domain"],
           "options": {
             "jestConfig": "libs/shared/domain/jest.config.js",
             "passWithNoTests": true
@@ -911,7 +887,7 @@
         }
       }
     },
-    "shared-domain-src-lib-finance": {
+    "shared-domain-finance": {
       "projectType": "library",
       "root": "libs/shared/domain/src/lib/finance",
       "sourceRoot": "libs/shared/domain/src/lib/finance/src",
@@ -940,12 +916,50 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/domain/src/lib/finance"
-          ],
+          "outputs": ["coverage/libs/shared/domain/src/lib/finance"],
           "options": {
             "jestConfig": "libs/shared/domain/src/lib/finance/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-ui-formly-config": {
+      "projectType": "library",
+      "root": "libs/shared/ui/formly-config",
+      "sourceRoot": "libs/shared/ui/formly-config/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/shared/ui/formly-config/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/formly-config/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/ui/formly-config/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/formly-config"],
+          "options": {
+            "jestConfig": "libs/shared/ui/formly-config/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/formly-config/src/**/*.ts",
+              "libs/shared/ui/formly-config/src/**/*.html"
+            ]
           }
         }
       }

@@ -135,7 +135,7 @@
     rxjs "6.6.3"
     source-map "0.7.3"
 
-"@angular-devkit/core@12.0.0":
+"@angular-devkit/core@12.0.0", "@angular-devkit/core@>=7.0.0":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-12.0.0.tgz#e5f1dc4ba2e65a7aeb1fb14659e17a0f92dbae1b"
   integrity sha512-4Cys++a684hCDTL/1X6j9izsjsqvYs3m6LF58zvKZHeG/Yhdofv1rV+3YGVYAorOx9w4spAgYTmr99TYnBGQWQ==
@@ -147,7 +147,7 @@
     rxjs "6.6.7"
     source-map "0.7.3"
 
-"@angular-devkit/schematics@12.0.0", "@angular-devkit/schematics@~12.0.0":
+"@angular-devkit/schematics@12.0.0", "@angular-devkit/schematics@>=7.0.0", "@angular-devkit/schematics@~12.0.0":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-12.0.0.tgz#d46fa41d8968b64b6234f828fc16a227630fe621"
   integrity sha512-xp6b8QF+MYT3kXEDo6MFRQRDGkFxAHBdBCo2wdo8qvoNHIr+8XYZwDEb8z0SbzzJmXFbDXk1vmavcNSd6+uLXg==
@@ -1688,6 +1688,29 @@
   dependencies:
     enhanced-resolve "5.7.0"
 
+"@ngx-formly/core@^5.10.19":
+  version "5.10.19"
+  resolved "https://registry.yarnpkg.com/@ngx-formly/core/-/core-5.10.19.tgz#d788743b7a1a45f80d9e96706ac09a39614c09e5"
+  integrity sha512-vPUBMCGXfOov6h1WC8Yw3pIkOjxHixCmI4v+UJVOk0ThFg9XwAplG0TyE2Gkjp5KBNu4VVPxT6II6meSf0ivXQ==
+  dependencies:
+    tslib "^1.7.1"
+
+"@ngx-formly/material@^5.10.19":
+  version "5.10.19"
+  resolved "https://registry.yarnpkg.com/@ngx-formly/material/-/material-5.10.19.tgz#60c1ea1410a8f3eb868d76d912fd35de9fdb8864"
+  integrity sha512-7XJV3dRVHbuYG8gXYc7nojtm4kCBoN309urcgqIJu0IXEGLMrd+U9L0+tK2RzAq0FIA+yfwqSRWYkZ54fdT4nA==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngx-formly/schematics@5.10.19":
+  version "5.10.19"
+  resolved "https://registry.yarnpkg.com/@ngx-formly/schematics/-/schematics-5.10.19.tgz#87c01da113723ea5a638d5fdcad6b9b03207108a"
+  integrity sha512-1lW1Y3JV/uOaxCqC0uuTITNh0ld6ELqLZBFx/x1KzrrVcKhyc1iKhklvNTzCU9rxpMgoNWZxwaEd2C07JePT3A==
+  dependencies:
+    "@angular-devkit/core" ">=7.0.0"
+    "@angular-devkit/schematics" ">=7.0.0"
+    "@schematics/angular" ">=7.0.0"
+
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz#d4b3549a5db5de2683e0c1071ab4f140904bbf69"
@@ -1987,7 +2010,7 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@schematics/angular@12.0.0", "@schematics/angular@^12.0.0", "@schematics/angular@~12.0.0":
+"@schematics/angular@12.0.0", "@schematics/angular@>=7.0.0", "@schematics/angular@^12.0.0", "@schematics/angular@~12.0.0":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-12.0.0.tgz#519c8d2bfb548c2678d7b3589548a7ff37e0dcf0"
   integrity sha512-6fS1MuzLvuiuS8ruSl919+mXTBDgpMY+mC+n1iM70rHvDms6+wEIwuyEty6Mw7JsPFXwcFAsIBt3EZCplzHhmg==
@@ -10487,7 +10510,7 @@ tslib@2.2.0, tslib@^2.0.0, tslib@^2.1.0, tslib@^2.2.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
 
-tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
+tslib@^1.10.0, tslib@^1.7.1, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==

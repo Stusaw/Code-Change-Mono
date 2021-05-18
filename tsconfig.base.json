@@ -27,15 +27,17 @@
       "@shared-ui-material-design": [
         "libs/shared/ui/material-design/src/index.ts"
       ],
+      "@shared-ui-formly": ["libs/shared/ui/formly-config/src/index.ts"],
       "@shared-core": ["libs/shared/core/src/index.ts"],
       "@shared-domain": ["libs/shared/domain/src/index.ts"],
       "@shared-domain-finance": [
         "libs/shared/domain/src/lib/finance/src/index.ts"
-      ]
+      ],
     }
   },
   "angularCompilerOptions": {
-    "strictTemplates": true
+    "strictTemplates": true,
+    "strictPropertyInitialization": false
   },
   "exclude": ["node_modules", "tmp"]
 }
