@@ -5,12 +5,11 @@ import {
   SkipSelf
 } from '@angular/core';
 import { DomainModule } from '@shared-domain';
+import { LanguageTranslationModule } from '@shared-ui-language';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
 @NgModule({
-  imports: [
-    DomainModule
-  ],
+  imports: [DomainModule, LanguageTranslationModule],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

@@ -963,6 +963,46 @@
           }
         }
       }
+    },
+    "shared-ui-language-translation": {
+      "projectType": "library",
+      "root": "libs/shared/ui/language-translation",
+      "sourceRoot": "libs/shared/ui/language-translation/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/shared/ui/language-translation/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/language-translation/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/ui/language-translation/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/language-translation"],
+          "options": {
+            "jestConfig": "libs/shared/ui/language-translation/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/language-translation/src/**/*.ts",
+              "libs/shared/ui/language-translation/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "dealership-portal"

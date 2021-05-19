@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     CoreModule.forRoot(environment),
     IonicModule.forRoot(),
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
