@@ -54,6 +54,11 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/translation/src/assets/i18n",
+                "output": "assets"
               }
             ],
             "styles": [
@@ -376,6 +381,11 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/translation/src/assets/i18n",
+                "output": "assets"
               }
             ],
             "styles": [
@@ -587,6 +597,11 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/translation/src/assets/i18n",
+                "output": "assets"
               }
             ],
             "styles": [
@@ -964,32 +979,32 @@
         }
       }
     },
-    "shared-ui-language-translation": {
+    "shared-translation": {
       "projectType": "library",
-      "root": "libs/shared/ui/language-translation",
-      "sourceRoot": "libs/shared/ui/language-translation/src",
+      "root": "libs/shared/translation",
+      "sourceRoot": "libs/shared/translation/src",
       "prefix": "code-change",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
           "options": {
-            "project": "libs/shared/ui/language-translation/ng-package.json"
+            "project": "libs/shared/translation/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/shared/ui/language-translation/tsconfig.lib.prod.json"
+              "tsConfig": "libs/shared/translation/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "libs/shared/ui/language-translation/tsconfig.lib.json"
+              "tsConfig": "libs/shared/translation/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/ui/language-translation"],
+          "outputs": ["coverage/libs/shared/translation"],
           "options": {
-            "jestConfig": "libs/shared/ui/language-translation/jest.config.js",
+            "jestConfig": "libs/shared/translation/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -997,8 +1012,8 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shared/ui/language-translation/src/**/*.ts",
-              "libs/shared/ui/language-translation/src/**/*.html"
+              "libs/shared/translation/src/**/*.ts",
+              "libs/shared/translation/src/**/*.html"
             ]
           }
         }

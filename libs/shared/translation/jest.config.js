@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'shared-ui-language-translation',
-  preset: '../../../../jest.preset.js',
+  displayName: 'shared-translation',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../../coverage/libs/shared/ui/language-translation',
+  coverageDirectory: '../../../coverage/libs/shared/translation',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',

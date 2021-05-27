@@ -33,9 +33,7 @@
       "@shared-domain-finance": [
         "libs/shared/domain/src/lib/finance/src/index.ts"
       ],
-      "@shared-ui-language": [
-        "libs/shared/ui/language-translation/src/index.ts"
-      ]
+      "@shared-translation": ["libs/shared/translation/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
