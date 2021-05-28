@@ -1,8 +1,8 @@
 import {
-  ModuleWithProviders,
-  NgModule,
-  Optional,
-  SkipSelf
+    ModuleWithProviders,
+    NgModule,
+    Optional,
+    SkipSelf
 } from '@angular/core';
 import { DomainModule } from '@shared-domain';
 import { TranslationModule } from '@shared-translation';

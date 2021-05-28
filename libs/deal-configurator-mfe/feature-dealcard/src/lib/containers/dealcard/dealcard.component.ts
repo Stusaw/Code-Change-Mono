@@ -11,6 +11,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                           <ion-card-subtitle>MFE</ion-card-subtitle>
                           <ion-card-title>This is a Mirco-frontend</ion-card-title>
                         </ion-card-header>
+
+                        <p>{{'gregg' | translate }}</p>
                       
                         <ion-card-content>
                           Keep close to Nature's heart... and break clear away, once in awhile,

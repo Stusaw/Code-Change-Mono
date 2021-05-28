@@ -21,4 +21,5 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   exports: [TranslateModule],
 })
-export class TranslationModule {}
+export class TranslationModule {
+}

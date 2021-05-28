@@ -23,6 +23,8 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 
         <p>{{'gregg' | translate }}</p>
 
+        <p>{{'extend' | translate }}</p>
+
         <mat-card>
           <mat-card-title>Login</mat-card-title>
           <mat-card-content>

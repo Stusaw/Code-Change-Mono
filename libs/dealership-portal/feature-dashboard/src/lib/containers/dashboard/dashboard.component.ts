@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   template: `
           <p>Dashboard - This is a feature library from the mono-repo</p>
           <a [routerLink]="['/home']">Home</a>
-
+          <p>{{'gregg' | translate }}</p>
           <mat-card>
             <mat-card-title>Login</mat-card-title>
             <mat-card-content>
