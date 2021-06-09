@@ -17,7 +17,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient],
       },
       isolate: false
-    }),
+    })
   ],
   exports: [TranslateModule],
 })

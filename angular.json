@@ -61,9 +61,14 @@
                 "output": "assets/i18n"
               },
               {
-                "input": "libs/dealership-portal/feature-home/src/assets/i18n",
+                "input": "libs/dealership-portal/feature-home/src/assets/i18n/feature-home",
                 "glob": "*.json",
-                "output": "assets/i18n"
+                "output": "assets/i18n/feature-home"
+              },
+              {
+                "input": "libs/dealership-portal/feature-dashboard/src/assets/i18n/feature-dashboard",
+                "glob": "*.json",
+                "output": "assets/i18n/feature-dashboard"
               }
             ],
             "styles": [

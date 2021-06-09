@@ -2,31 +2,32 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import {
+  TranslateLoader,
+  TranslateModule
+} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslationModule } from '@shared-translation';
 import { FormlyConfigModule } from '@shared-ui-formly';
 import { HomeComponent } from './containers/home/home.component';
 
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http, './assets/i18n/feature-home/', '.json');
 }
 
 @NgModule({
   imports: [
     CommonModule,
     FormlyConfigModule.forRoot(),
-    TranslationModule,
     TranslateModule.forChild({
       defaultLanguage: 'en-GB',
+      useDefaultLang: true,
       loader: {
         provide: TranslateLoader,
-        useFactory: createTranslateLoader,
+        useFactory: (HttpLoaderFactory),
         deps: [HttpClient],
       },
-      extend: true,
+      extend: true
     }),
-
     RouterModule.forChild([
       { path: '', pathMatch: 'full', component: HomeComponent },
     ]),
@@ -35,4 +36,10 @@ export function createTranslateLoader(http: HttpClient) {
   exports: [HomeComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class FeatureHomeModule {}
+export class FeatureHomeModule {
+  // constructor(protected translateService: TranslateService) {
+  //   const currentLang = translateService.currentLang;
+  //   translateService.currentLang = '';
+  //   translateService.use(currentLang);
+  // }
+}

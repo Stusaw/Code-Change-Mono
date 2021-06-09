@@ -21,9 +21,9 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
           <a routerLink="/dashboard">Dashboard</a>
         </p>
 
-        <p>{{'gregg' | translate }}</p>
+        <p>{{'global' | translate }}</p>
 
-        <p>{{'extend' | translate }}</p>
+        <p>{{'feature-home' | translate }}</p>
 
         <mat-card>
           <mat-card-title>Login</mat-card-title>

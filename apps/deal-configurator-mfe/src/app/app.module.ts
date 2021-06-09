@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
     CoreModule.forRoot(environment),
     IonicModule.forRoot(),
     AppRoutingModule,
+    // TranslationModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
