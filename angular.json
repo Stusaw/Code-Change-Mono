@@ -117,7 +117,12 @@
           "options": {
             "browserTarget": "dealership-portal:build",
             "extraWebpackConfig": "apps/dealership-portal/webpack.config.js",
-            "port": 4200
+            "port": 4200,
+            "sourceMap": {
+              "scripts": true,
+              "styles": true,
+              "vendor": true
+            }
           },
           "configurations": {
             "production": {
@@ -396,10 +401,16 @@
                 "input": "libs/shared/translation/src/assets/i18n",
                 "glob": "*.json",
                 "output": "assets/i18n"
+              },
+              {
+                "input": "libs/dealership-portal/feature-home/src/assets/i18n/feature-home",
+                "glob": "*.json",
+                "output": "assets/i18n/feature-home"
               }
             ],
             "styles": [
               "apps/customer-portal/src/styles.scss",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               {
                 "input": "apps\\customer-portal/src/theme/variables.scss"
               }

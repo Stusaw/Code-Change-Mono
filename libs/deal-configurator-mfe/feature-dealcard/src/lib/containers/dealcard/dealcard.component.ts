@@ -12,7 +12,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                           <ion-card-title>This is a Mirco-frontend</ion-card-title>
                         </ion-card-header>
 
-                        <!-- <p>{{'global' | translate }}</p> -->
+                        <p>{{'global' | translate }}</p>
                       
                         <ion-card-content>
                           Keep close to Nature's heart... and break clear away, once in awhile,

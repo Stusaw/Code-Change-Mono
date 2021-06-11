@@ -21,6 +21,13 @@ const routes: Routes = [
         exposedModule: './Module',
       }).then((m) => m.FeatureDealcardModule),
   },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('@dealership-portal/feature-home').then(
+        (m) => m.FeatureHomeModule
+      ),
+  },
 ];
 
 @NgModule({

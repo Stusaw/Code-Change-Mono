@@ -4,7 +4,8 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
   TranslateLoader,
-  TranslateModule
+  TranslateModule,
+  TranslateService
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormlyConfigModule } from '@shared-ui-formly';
@@ -20,7 +21,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     FormlyConfigModule.forRoot(),
     TranslateModule.forChild({
       defaultLanguage: 'en-GB',
-      useDefaultLang: true,
       loader: {
         provide: TranslateLoader,
         useFactory: (HttpLoaderFactory),
@@ -37,9 +37,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeatureHomeModule {
-  // constructor(protected translateService: TranslateService) {
-  //   const currentLang = translateService.currentLang;
-  //   translateService.currentLang = '';
-  //   translateService.use(currentLang);
-  // }
+  constructor(protected translateService: TranslateService) {
+    const currentLang = translateService.currentLang;
+    translateService.currentLang = '';
+    translateService.use(currentLang);
+  }
 }
