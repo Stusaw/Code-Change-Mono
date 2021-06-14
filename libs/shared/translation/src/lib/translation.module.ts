@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {
   TranslateLoader,
-  TranslateModule,
-  TranslateService
+  TranslateModule
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -25,9 +24,4 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   ],
   exports: [TranslateModule],
 })
-export class TranslationModule {
-  constructor(private _translate: TranslateService) {
-    // this._translate.setDefaultLang('en-GB');
-    //this._translate.use('en-GB');
-  }
-}
+export class TranslationModule {}

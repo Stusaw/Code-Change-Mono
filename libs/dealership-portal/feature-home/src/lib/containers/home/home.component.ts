@@ -25,6 +25,8 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 
         <p>{{'feature-home' | translate }}</p>
 
+        <p>{{"ThisNeedsSpacifying(oh no it doesn't)" | spacifyWords }}</p>
+
         <mat-card>
           <mat-card-title>Login</mat-card-title>
           <mat-card-content>

@@ -10,7 +10,10 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -27,18 +30,32 @@
       "@shared-ui-material-design": [
         "libs/shared/ui/material-design/src/index.ts"
       ],
-      "@shared-ui-formly": ["libs/shared/ui/formly-config/src/index.ts"],
-      "@shared-core": ["libs/shared/core/src/index.ts"],
-      "@shared-domain": ["libs/shared/domain/src/index.ts"],
+      "@shared-ui-formly": [
+        "libs/shared/ui/formly-config/src/index.ts"
+      ],
+      "@shared-ui-custom-pipes": [
+        "libs/shared/ui/custom-pipes/src/index.ts"
+      ],
+      "@shared-core": [
+        "libs/shared/core/src/index.ts"
+      ],
+      "@shared-domain": [
+        "libs/shared/domain/src/index.ts"
+      ],
       "@shared-domain-finance": [
         "libs/shared/domain/src/lib/finance/src/index.ts"
       ],
-      "@shared-translation": ["libs/shared/translation/src/index.ts"]
+      "@shared-translation": [
+        "libs/shared/translation/src/index.ts"
+      ]
     }
   },
   "angularCompilerOptions": {
     "strictTemplates": true,
     "strictPropertyInitialization": false
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

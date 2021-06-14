@@ -12,5 +12,6 @@ module.exports = {
     '<rootDir>/libs/shared/domain/src/lib/finance',
     '<rootDir>/libs/shared/ui/formly-config',
     '<rootDir>/libs/shared/translation',
+    '<rootDir>/libs/shared/ui/custom-pipes',
   ],
 };

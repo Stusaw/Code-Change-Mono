@@ -4,6 +4,7 @@
     "defaultCollection": "@nrwl/angular",
     "packageManager": "yarn"
   },
+  "defaultProject": "dealership-portal",
   "schematics": {
     "@nrwl/angular": {
       "application": {
@@ -1039,7 +1040,47 @@
           }
         }
       }
+    },
+    "shared-ui-custom-pipes": {
+      "projectType": "library",
+      "root": "libs/shared/ui/custom-pipes",
+      "sourceRoot": "libs/shared/ui/custom-pipes/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/shared/ui/custom-pipes"],
+          "options": {
+            "project": "libs/shared/ui/custom-pipes/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/custom-pipes/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/ui/custom-pipes/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/custom-pipes"],
+          "options": {
+            "jestConfig": "libs/shared/ui/custom-pipes/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/custom-pipes/src/**/*.ts",
+              "libs/shared/ui/custom-pipes/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
-  },
-  "defaultProject": "dealership-portal"
+  }
 }

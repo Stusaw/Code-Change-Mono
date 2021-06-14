@@ -5,19 +5,21 @@ import {
   SkipSelf
 } from '@angular/core';
 import { DomainModule } from '@shared-domain';
-import { TranslateLangService } from './bootstrap/translate-lang.service';
+import { CustomPipesModule } from '@shared-ui-custom-pipes';
+import { TranslateLangService as LanguageBootstrapService } from './bootstrap/language-bootstrap.service';
+import { AppCommonServices } from './common';
 import { AppInitialiserProviders } from './initialisers/app-initialisers';
+import { DefaultInterceptor } from './interceptors/default-interceptor';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
 export function TranslateLangServiceFactory(
-  translateLangService: TranslateLangService
+  translateLangService: LanguageBootstrapService
 ) {
   return () => translateLangService.load();
 }
 
-
 @NgModule({
-  imports: [DomainModule]
+  imports: [DomainModule, CustomPipesModule],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
@@ -29,8 +31,10 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         { provide: 'env', useValue: environment },
-        TranslateLangService,
-        AppInitialiserProviders
+        DefaultInterceptor,
+        LanguageBootstrapService,
+        AppInitialiserProviders,
+        AppCommonServices,
       ],
     };
   }
