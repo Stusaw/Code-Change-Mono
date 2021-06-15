@@ -4,9 +4,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   imports: [CommonModule],
-  exports: [FlexLayoutModule, MatCardModule, MatInputModule, MatButtonModule],
+  exports: [
+    FlexLayoutModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatMenuModule,
+  ],
 })
 export class UiMaterialDesignModule {}

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   // templateUrl: './dashboard.component.html',
@@ -6,24 +6,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   template: `
           <p>Dashboard - This is a feature library from the mono-repo</p>
           <a [routerLink]="['/home']">Home</a>
-          <p>{{'global' | translate }}</p>
           <p>{{'feature-dashboard' | translate }}</p>
-          <mat-card>
-            <mat-card-title>Login</mat-card-title>
-            <mat-card-content>
-              <form fxLayout="column" fxLayoutAlign="center none">
-                <mat-form-field>
-                  <input matInput placeholder="username" type="text" #username />
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="password" type="text" #password />
-                </mat-form-field>
-              </form>
-              <button mat-raised-button>login</button>
-            </mat-card-content>
-          </mat-card>
+          <app-translate></app-translate>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements OnInit {
   constructor() {}

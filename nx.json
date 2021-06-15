@@ -72,6 +72,9 @@
     },
     "shared-ui-custom-pipes": {
       "tags": []
+    },
+    "shared-ui-shared-components": {
+      "tags": []
     }
   }
 }

@@ -1081,6 +1081,47 @@
           }
         }
       }
+    },
+    "shared-ui-shared-components": {
+      "projectType": "library",
+      "root": "libs/shared/ui/shared-components",
+      "sourceRoot": "libs/shared/ui/shared-components/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/shared/ui/shared-components"],
+          "options": {
+            "project": "libs/shared/ui/shared-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/shared-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/ui/shared-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/shared-components"],
+          "options": {
+            "jestConfig": "libs/shared/ui/shared-components/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/shared-components/src/**/*.ts",
+              "libs/shared/ui/shared-components/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }

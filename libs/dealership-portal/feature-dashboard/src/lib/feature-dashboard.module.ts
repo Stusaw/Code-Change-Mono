@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -8,6 +7,8 @@ import {
   TranslateService
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SettingsService } from '@shared-core';
+import { SharedComponentsModule } from '@shared-ui-components';
 import { UiMaterialDesignModule } from '@shared-ui-material-design';
 import { DashboardComponent } from './containers/dashboard/dashboard.component';
 
@@ -21,30 +22,34 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 @NgModule({
   imports: [
-    CommonModule,
     UiMaterialDesignModule,
+    SharedComponentsModule,
     TranslateModule.forChild({
       defaultLanguage: 'en-GB',
-      useDefaultLang: true,
       loader: {
         provide: TranslateLoader,
-        useFactory: (HttpLoaderFactory),
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
       extend: true,
     }),
-    RouterModule.forChild([
-      { path: '', pathMatch: 'full', component: DashboardComponent },
-    ]),
+    RouterModule.forChild([{ path: '', component: DashboardComponent }]),
   ],
   declarations: [DashboardComponent],
   exports: [DashboardComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeatureDashboardModule {
-  constructor(protected translateService: TranslateService) {
-    const currentLang = translateService.currentLang;
-    translateService.currentLang = '';
-    translateService.use(currentLang);
+  constructor(
+    protected _translateService: TranslateService,
+    protected _settings: SettingsService
+  ) {
+
+    //When the language changes we can force the lazy module to use the new setting
+    this._settings.notify.subscribe(() => {
+      const currentLang = this._translateService.currentLang;
+      this._translateService.currentLang = '';
+      this._translateService.use(currentLang);
+    });
   }
 }

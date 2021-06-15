@@ -7,7 +7,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
     <ion-content>
       <ion-header>
         <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
+          <ion-title size="large">Home</ion-title>
         </ion-toolbar>
       </ion-header>
 
@@ -21,11 +21,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
           <a routerLink="/dashboard">Dashboard</a>
         </p>
 
-        <p>{{'global' | translate }}</p>
-
-        <p>{{'feature-home' | translate }}</p>
-
-        <p>{{"ThisNeedsSpacifying(oh no it doesn't)" | spacifyWords }}</p>
+        <p>{{ 'feature-home' | translate }}</p>
 
         <mat-card>
           <mat-card-title>Login</mat-card-title>
@@ -41,9 +37,13 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
                 [model]="model"
               ></formly-form>
             </form>
-            <button [disabled]="form.invalid" mat-raised-button>login</button>
+            <button [disabled]="form.invalid" mat-raised-button>
+              {{ 'global.actions.login' | translate }}
+            </button>
           </mat-card-content>
         </mat-card>
+
+        <app-translate></app-translate>
       </div>
     </ion-content>
   `,

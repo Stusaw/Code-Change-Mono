@@ -1,3 +1,73 @@
 {
-    "global": "This is from the global translation file"
+	"global": {
+		"actions": {
+			"cancel": "Cancel",
+			"continue": "Continue",
+			"edit": "Edit",
+			"exit": "Exit",
+			"load_more": "Load More",
+			"login": "Login",
+			"logout": "Logout",
+			"next": "Next",
+			"ok": "Okay",
+			"please_select": "Please select",
+			"previous": "Previous",
+			"reset": "Reset",
+			"run": "Run",
+			"save": "Save",
+			"search": "Search",
+			"select": "Select",
+			"send_request": "Send Request",
+			"start": "Start"
+		},
+		"form_fields": {
+			"common": {
+				"optional_placeholder": "Optional",
+				"required_placeholder": "Required"
+			},
+			"personal": {
+				"email": "Email",
+				"firstname": "First Name",
+				"fullname": "Customer Name",
+				"lastname": "Last Name",
+				"telephone_number": "Telephone Number"
+			},
+			"vehicle": {
+				"deposit": "Deposit",
+				"engine_number": "Engine Number",
+				"finance_settlement": "Finance Settlement",
+				"mileage": "Current Mileage",
+				"part_exchange": "Part Exchange",
+				"price": "Purchase Price",
+				"registration_number": "Registration Number",
+				"stock_number": "Stock Number",
+				"vin": "VIN"
+			}
+		},
+		"input_masks": {
+			"engine_number": "9",
+			"registration_number": "9"
+		},
+		"locale": {
+			"currency_symbol": "&#163;"
+		},
+		"responses": {
+			"idk": "I don't know",
+			"no": "No",
+			"yes": "Yes"
+		},
+		"sorting": {
+			"highest_value": "Highest value",
+			"lowest_value": "Lowest value"
+		},
+		"validation": {
+			"invalid-email": "Invalid email",
+			"max": "This value should be less than {{number}}",
+			"maxlength": "This value should be less than {{number}} characters",
+			"min": "This value should be more than {{number}}",
+			"minlength": "Should have atleast {{number}} characters",
+			"required": "This field is required",
+			"requiredtrue": "You must accept before continuing"
+		}
+	}
 }

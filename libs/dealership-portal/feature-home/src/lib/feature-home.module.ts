@@ -8,8 +8,10 @@ import {
   TranslateService
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SettingsService } from '@shared-core';
 import { CustomPipesModule } from '@shared-ui-custom-pipes';
 import { FormlyConfigModule } from '@shared-ui-formly';
+import { SharedComponentsModule } from './../../../../shared/ui/shared-components/src/lib/shared-components.module';
 import { HomeComponent } from './containers/home/home.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -21,8 +23,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     CommonModule,
     FormlyConfigModule.forRoot(),
     CustomPipesModule,
+    SharedComponentsModule,
     TranslateModule.forChild({
-      defaultLanguage: 'en-GB',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
@@ -39,9 +41,15 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeatureHomeModule {
-  constructor(protected translateService: TranslateService) {
-    const currentLang = translateService.currentLang;
-    translateService.currentLang = '';
-    translateService.use(currentLang);
+  constructor(
+    protected _translateService: TranslateService,
+    protected _settings: SettingsService
+  ) {
+    //When the language changes we can force the lazy module to use the new setting
+    this._settings.notifyLanguageChange.subscribe(() => {
+      const currentLang = this._translateService.currentLang;
+      this._translateService.currentLang = '';
+      this._translateService.use(currentLang);
+    });
   }
 }

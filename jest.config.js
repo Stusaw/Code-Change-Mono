@@ -13,5 +13,6 @@ module.exports = {
     '<rootDir>/libs/shared/ui/formly-config',
     '<rootDir>/libs/shared/translation',
     '<rootDir>/libs/shared/ui/custom-pipes',
+    '<rootDir>/libs/shared/ui/shared-components',
   ],
 };
