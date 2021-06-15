@@ -12,8 +12,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
                           <ion-card-title>This is a Mirco-frontend</ion-card-title>
                         </ion-card-header>
 
-                        <p>{{'global' | translate }}</p>
-                      
                         <ion-card-content>
                           Keep close to Nature's heart... and break clear away, once in awhile,
                           and climb a mountain or spend a week in the woods. Wash your spirit clean.
