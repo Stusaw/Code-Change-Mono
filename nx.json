@@ -75,6 +75,9 @@
     },
     "shared-ui-shared-components": {
       "tags": []
+    },
+    "dealership-portal-ui": {
+      "tags": []
     }
   }
 }

@@ -14,5 +14,6 @@ module.exports = {
     '<rootDir>/libs/shared/translation',
     '<rootDir>/libs/shared/ui/custom-pipes',
     '<rootDir>/libs/shared/ui/shared-components',
+    '<rootDir>/libs/dealership-portal/ui',
   ],
 };

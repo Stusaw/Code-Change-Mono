@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { SettingsService } from '@shared-core';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,12 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private _translate: TranslateService) {
-    //This must be set here - Please do not remove.
-    this._translate.setDefaultLang('en-GB');
-    this._translate.use('en-GB');
+  constructor(
+    private _translateService: TranslateService,
+    private _settings: SettingsService
+  ) {
+    this._settings.notifyLanguageChange.subscribe((obj: { lang: string }) => {
+      this._translateService.use(obj.lang);
+    });
   }
 }

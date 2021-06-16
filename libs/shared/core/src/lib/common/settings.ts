@@ -1,7 +1,7 @@
 export interface AppSettings {
   theme?: 'light' | 'dark';
-  language?: string;
-  currency?: string;
+  language: string;
+  currency: string;
 }
 
 export const defaults: AppSettings = {

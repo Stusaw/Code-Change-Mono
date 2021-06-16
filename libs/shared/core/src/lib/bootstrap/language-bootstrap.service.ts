@@ -3,7 +3,7 @@ import { Injectable, Injector } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../common';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TranslateLangService {
   constructor(
     private injector: Injector,
@@ -25,20 +25,16 @@ export class TranslateLangService {
           : 'en-GB';
 
         this.settings.setLanguage(defaultLang);
-        this.translate.setDefaultLang(defaultLang);
-        this.translate.use(defaultLang).subscribe(
-          () => {
-            console.log(`Successfully initialized '${defaultLang}' language.'`);
-          },
-          () => {
+        // this.translate.setDefaultLang(defaultLang);
+        this.translate.use(defaultLang).subscribe({
+          next: (v) =>
+            console.log(`Successfully initialized '${defaultLang}' language.'`),
+          error: (e) =>
             console.error(
               `Problem with '${defaultLang}' language initialization.'`
-            );
-          },
-          () => {
-            resolve(null);
-          }
-        );
+            ),
+          complete: () => resolve(null),
+        });
       });
     });
   }

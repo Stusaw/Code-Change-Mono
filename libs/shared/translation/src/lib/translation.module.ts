@@ -10,13 +10,13 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 @NgModule({
   imports: [
     TranslateModule.forRoot({
-      defaultLanguage: 'en-GB',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
       isolate: false,
+      extend: true
     }),
   ],
   exports: [TranslateModule],

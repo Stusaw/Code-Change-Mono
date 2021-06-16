@@ -1122,6 +1122,47 @@
           }
         }
       }
+    },
+    "dealership-portal-ui": {
+      "projectType": "library",
+      "root": "libs/dealership-portal/ui",
+      "sourceRoot": "libs/dealership-portal/ui/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/dealership-portal/ui"],
+          "options": {
+            "project": "libs/dealership-portal/ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/dealership-portal/ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/dealership-portal/ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dealership-portal/ui"],
+          "options": {
+            "jestConfig": "libs/dealership-portal/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dealership-portal/ui/src/**/*.ts",
+              "libs/dealership-portal/ui/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }

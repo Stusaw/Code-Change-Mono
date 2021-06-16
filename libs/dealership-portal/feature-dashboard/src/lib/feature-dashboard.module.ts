@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { UiModule } from '@dealership-portal-ui';
 import {
   TranslateLoader,
   TranslateModule,
@@ -24,8 +25,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   imports: [
     UiMaterialDesignModule,
     SharedComponentsModule,
+    UiModule,
     TranslateModule.forChild({
-      defaultLanguage: 'en-GB',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
@@ -44,12 +45,10 @@ export class FeatureDashboardModule {
     protected _translateService: TranslateService,
     protected _settings: SettingsService
   ) {
-
     //When the language changes we can force the lazy module to use the new setting
-    this._settings.notify.subscribe(() => {
-      const currentLang = this._translateService.currentLang;
+    this._settings.notifyLanguageChange.subscribe((obj: { lang: string }) => {
       this._translateService.currentLang = '';
-      this._translateService.use(currentLang);
+      this._translateService.use(obj.lang);
     });
   }
 }

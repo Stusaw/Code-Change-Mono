@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { UiModule } from '@dealership-portal-ui';
 import {
   TranslateLoader,
   TranslateModule,
@@ -24,6 +25,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     FormlyConfigModule.forRoot(),
     CustomPipesModule,
     SharedComponentsModule,
+    UiModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -46,10 +48,9 @@ export class FeatureHomeModule {
     protected _settings: SettingsService
   ) {
     //When the language changes we can force the lazy module to use the new setting
-    this._settings.notifyLanguageChange.subscribe(() => {
-      const currentLang = this._translateService.currentLang;
+    this._settings.notifyLanguageChange.subscribe((obj: { lang: string }) => {
       this._translateService.currentLang = '';
-      this._translateService.use(currentLang);
+      this._translateService.use(obj.lang);
     });
   }
 }

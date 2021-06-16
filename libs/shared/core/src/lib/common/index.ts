@@ -9,5 +9,5 @@ export * from './toastr-factory.service';
 export const AppCommonServices = [
   ToastrFactoryService,
   LocalStorageService,
-  SettingsService,
+  SettingsService
 ];

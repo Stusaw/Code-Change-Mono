@@ -5,12 +5,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 @Component({
   template: `
     <ion-content>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title size="large">Home</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
+      <app-header></app-header>
       <div id="container">
         <h1>Welcome to dealership-portal!</h1>
         <p>Home - This is a feature library from the mono-repo!</p>
@@ -43,7 +38,6 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
           </mat-card-content>
         </mat-card>
 
-        <app-translate></app-translate>
       </div>
     </ion-content>
   `,
