@@ -4,7 +4,7 @@ import { UiMaterialDesignModule } from '@shared-ui-material-design';
 import { TranslateComponent } from './widgets/translate.component';
 
 @NgModule({
-  imports: [CommonModule, UiMaterialDesignModule],
+  imports: [CommonModule, UiMaterialDesignModule.forRoot()],
   declarations: [TranslateComponent],
   exports: [TranslateComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

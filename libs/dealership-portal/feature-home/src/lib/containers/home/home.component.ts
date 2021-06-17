@@ -8,7 +8,6 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
       <app-header></app-header>
       <div id="container">
         <h1>Welcome to dealership-portal!</h1>
-        <p>Home - This is a feature library from the mono-repo!</p>
         <strong>
           <a routerLink="/mfe">Link to a remote micro-frontend?</a></strong
         >
@@ -19,7 +18,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
         <p>{{ 'feature-home' | translate }}</p>
 
         <mat-card>
-          <mat-card-title>Login</mat-card-title>
+          <mat-card-title>Standard Form Elements</mat-card-title>
           <mat-card-content>
             <form
               fxLayout="column"
@@ -37,7 +36,6 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
             </button>
           </mat-card-content>
         </mat-card>
-
       </div>
     </ion-content>
   `,
@@ -61,22 +59,89 @@ export class HomeComponent implements OnInit {
         key: 'input',
         type: 'input',
         templateOptions: {
-          label: 'Input',
+          label: 'global.form_fields.personal.firstname',
+          floatLabel: false,
+          translate: true,
+          required: true,
+          addonLeft: {
+            icon: 'face',
+          }
+        },
+      },
+      {
+        key: 'select',
+        type: 'select',
+        templateOptions: {
+          label: 'Select',
           placeholder: 'Placeholder',
-          description: 'Description',
+          required: true,
+          options: [
+            { value: 1, label: 'Option 1' },
+            { value: 2, label: 'Option 2' },
+            { value: 3, label: 'Option 3' },
+            { value: 4, label: 'Option 4', disabled: true },
+          ],
+        },
+      },
+      {
+        key: 'radio',
+        type: 'radio',
+        templateOptions: {
+          label: 'Radio',
+          placeholder: 'Placeholder',
+          required: true,
+          appearance: 'never',
+          options: [
+            { value: 1, label: 'Option 1' },
+            { value: 2, label: 'Option 2' },
+            { value: 3, label: 'Option 3' },
+            { value: 4, label: 'Option 4', disabled: true },
+          ],
+        },
+      },
+      {
+        key: 'toggle',
+        type: 'toggle',
+        templateOptions: {
+          label: 'Toggle label',
+          required: true,
+          appearance: 'never'
+        },
+      },
+      {
+        key: 'checkbox',
+        type: 'checkbox',
+        templateOptions: {
+          label: 'Accept terms',
+          description: 'In order to proceed, please accept terms',
+          pattern: 'true',
+          required: true,
+          appearance: 'never',
+        },
+        validation: {
+          messages: {
+            pattern: 'Please accept the terms',
+          },
+        },
+      },
+      {
+        key: 'datepicker',
+        type: 'datepicker',
+        templateOptions: {
+          label: 'Datepicker',
+          placeholder: 'Placeholder',
           required: true,
         },
       },
       {
-        key: 'input2',
-        type: 'input',
+        key: 'slider',
+        type: 'slider',
         templateOptions: {
-          label: 'Input 2',
-          placeholder: 'Placeholder',
-          description: 'Description',
+          label: 'Slider label',
           required: true,
+          appearance: 'never',
         },
-      },
+      }
     ];
   }
 }

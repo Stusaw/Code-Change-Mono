@@ -312,6 +312,13 @@
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-12.0.4.tgz#af2610721953f4c26727c37d829c38fa7f85445b"
   integrity sha512-BtXQ6MlnmBO/Ld0tyWP7GezHu9EAd+UtEZqBdoCCO0AgQ3JN4WGctowmYxEBc2cVtKGpjKEgJfVQu80RxK4RZg==
 
+"@angular/material-moment-adapter@^12.0.5":
+  version "12.0.5"
+  resolved "https://registry.yarnpkg.com/@angular/material-moment-adapter/-/material-moment-adapter-12.0.5.tgz#33b96d4ab18e5b8c0389f4681d25c0c2f74a34e9"
+  integrity sha512-m09k/hCwyZxUEyg3NwSHbe0JNekSPjW86o9C6nRQkYqeAq/AUVy266U8CY3vyM8LDNsc16lsYsueLdZ421Th9A==
+  dependencies:
+    tslib "^2.1.0"
+
 "@angular/material@^12.0.4":
   version "12.0.4"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-12.0.4.tgz#0cd88328f846d7ba6485abc7f1888aef174d7e4c"
@@ -7715,6 +7722,11 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@^0.5.5:
   dependencies:
     minimist "^1.2.5"
 
+moment@^2.29.1:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -7843,6 +7855,13 @@ ngx-build-plus@12.0.1, ngx-build-plus@^12.0.0:
   dependencies:
     "@schematics/angular" "^12.0.0"
     webpack-merge "^5.0.0"
+
+ngx-mask@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-mask/-/ngx-mask-12.0.0.tgz#8eb363cc609ab71b687bbe6f87497c461ca120b1"
+  integrity sha512-q4vUjhjJfg4faRud/tUdCTOs3JA6B+rBB2OPZ2xBZy4LNTRKGfUK683LrDCitMVBezjEAVrkQdUT1I4C7LXBZQ==
+  dependencies:
+    tslib "^2.1.0"
 
 ngx-spinner@^12.0.0:
   version "12.0.0"

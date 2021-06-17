@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -10,7 +11,7 @@ import {
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SettingsService } from '@shared-core';
 import { SharedComponentsModule } from '@shared-ui-components';
-import { UiMaterialDesignModule } from '@shared-ui-material-design';
+import { FormlyConfigModule } from '@shared-ui-formly';
 import { DashboardComponent } from './containers/dashboard/dashboard.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -23,7 +24,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 @NgModule({
   imports: [
-    UiMaterialDesignModule,
+    CommonModule,
+    FormlyConfigModule,
     SharedComponentsModule,
     UiModule,
     TranslateModule.forChild({

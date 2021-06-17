@@ -10,9 +10,8 @@ import {
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SettingsService } from '@shared-core';
-import { CustomPipesModule } from '@shared-ui-custom-pipes';
+import { SharedComponentsModule } from '@shared-ui-components';
 import { FormlyConfigModule } from '@shared-ui-formly';
-import { SharedComponentsModule } from './../../../../shared/ui/shared-components/src/lib/shared-components.module';
 import { HomeComponent } from './containers/home/home.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -22,8 +21,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 @NgModule({
   imports: [
     CommonModule,
-    FormlyConfigModule.forRoot(),
-    CustomPipesModule,
+    FormlyConfigModule,
     SharedComponentsModule,
     UiModule,
     TranslateModule.forChild({

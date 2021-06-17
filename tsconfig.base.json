@@ -42,7 +42,7 @@
     }
   },
   "angularCompilerOptions": {
-    "strictTemplates": true,
+    "strictTemplates": false,
     "strictPropertyInitialization": false
   },
   "exclude": ["node_modules", "tmp"]
