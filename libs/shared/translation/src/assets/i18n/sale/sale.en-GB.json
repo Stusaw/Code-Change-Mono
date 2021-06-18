@@ -1,0 +1,238 @@
+{
+	"sale": {
+		"compliance": {
+			"icon": "alert-circle",
+			"nav-title": "Compliance",
+			"steps": {
+				"compliance-introduction": {
+					"sub-steps": {
+						"1": {
+							"description": "Please read the following information carefully and accept it to continue.",
+							"nav-title": "Compliance"
+						}
+					}
+				},
+				"compliance-questionnaire": {
+					"sub-steps": {
+						"1": {
+							"description": "Let’s check your eligibility.",
+							"nav-title": "Compliance",
+							"questions": {
+								"annual-mileage": {
+									"label": "What is you annual mileage?"
+								},
+								"intended-ownership-months": {
+									"label": "How long do you intend to keep the vehicle?"
+								},
+								"percentage-off-road-usage": {
+									"label": "Will the vehicle be used off-road for more than 10% of the time?"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"finance-introduction": {
+			"icon": "card",
+			"nav-title": "Finance Introduction",
+			"steps": {
+				"finance-questionnaire": {
+					"sub-steps": {
+						"1": {
+							"description": "",
+							"nav-title": "Finance Introduction",
+							"questions": {
+								"is-customer-funding-vehicle": {
+									"label": "Do you intend on using a dealer facility to finance any part of this vehicle?"
+								},
+								"isCustomerFundingVehicle": {
+									"label": ""
+								}
+							}
+						},
+						"2": {
+							"description": "",
+							"nav-title": "Finance Introduction",
+							"questions": {
+								"expected-funding-term": {
+									"label": "How long would you like to finance for?"
+								},
+								"funding-type": {
+									"label": "What type of finance do you intend on using?"
+								},
+								"preferred-finance-provider-key": {
+									"label": "Preferred finance source (BM only)?"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"first-contact": {
+			"icon": "person-add",
+			"nav-title": "First Contact",
+			"steps": {
+				"first-contact-disclosure": {
+					"sub-steps": {
+						"1": {
+							"description": "To begin let’s take a few details",
+							"nav-title": "First Contact",
+							"questions": {
+								"contact-source": {
+									"label": "How did you hear about our dealership?",
+									"options": [
+										{
+											"label": "Advert"
+										},
+										{
+											"label": "Word of Mouth"
+										},
+										{
+											"label": "Drive-by"
+										},
+										{
+											"label": "Previous Customer"
+										},
+										{
+											"label": "Recommendation"
+										},
+										{
+											"label": "Campaign"
+										},
+										{
+											"label": "Other"
+										}
+									]
+								},
+								"contact-type": {
+									"label": "Method of initial contact?",
+									"options": [
+										{
+											"label": "WalkIn"
+										},
+										{
+											"label": "Phone"
+										},
+										{
+											"label": "Email"
+										},
+										{
+											"label": "Web Enquiry"
+										}
+									]
+								}
+							}
+						},
+						"2": {
+							"description": "Please read the following Initial Disclosure Statement carefully and if you’re happy with it choose ‘Agree and continue’",
+							"nav-title": "Important Information"
+						}
+					}
+				},
+				"first-contact-preferences": {
+					"sub-steps": {
+						"1": {
+							"description": "Familiarisation",
+							"nav-title": "Your Preferences",
+							"questions": {
+								"customerhastradein": {
+									"label": "Will you be looking to trade this in?"
+								}
+							}
+						},
+						"2": {
+							"description": "Understanding your Motoring Needs",
+							"nav-title": "Your Preferences"
+						},
+						"3": {
+							"description": "Cost and Features",
+							"nav-title": "Your Preferences"
+						},
+						"4": {
+							"description": "More",
+							"nav-title": "Your Preferences"
+						}
+					}
+				}
+			}
+		},
+		"requirements": {
+			"icon": "bag-add",
+			"nav-title": "Requirements",
+			"steps": {
+				"find-vehicle": {
+					"sub-steps": {
+						"1": {
+							"description": "Let's begin!",
+							"nav-title": "Your Requirements",
+							"questions": {
+								"new-vehicle": {
+									"label": "What are you looking for?",
+									"options": [
+										{
+											"label": "New"
+										},
+										{
+											"label": "Used"
+										},
+										{
+											"label": "Dealer Stock"
+										}
+									]
+								}
+							}
+						},
+						"2": {
+							"description": "What type of vehicle are you looking for?",
+							"nav-title": "Find Your New Vehicle"
+						},
+						"3": {
+							"description": "Select your chosen vehicle, or choose more than one vehicle to make a comparison.",
+							"nav-title": "Your Vehicle Selection"
+						},
+						"4": {
+							"description": "Please add some additional information",
+							"nav-title": "Vehicle Comparison"
+						}
+					}
+				},
+				"vehicle-confirmation": {
+					"sub-steps": {
+						"1": {
+							"description": "",
+							"nav-title": "Your Selected Vehicle"
+						},
+						"2": {
+							"description": "",
+							"nav-title": "Your Selected Vehicle",
+							"questions": {
+								"tyre-type": {
+									"label": "Has this vehicle got run flat tyres?"
+								},
+								"used-for-business": {
+									"label": "What is the type of vehicle purchase?",
+									"options": [
+										{
+											"label": "Individual"
+										},
+										{
+											"label": "Company"
+										}
+									]
+								},
+								"vehicle-residence-region-code": {
+									"label": "In which State will this vehicle be garaged?"
+								},
+								"warranty-expiry-date": {
+									"label": "Expiry date of any warranty applicable to this vehicle?"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

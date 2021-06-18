@@ -1,0 +1,238 @@
+{
+	"sale": {
+		"compliance": {
+			"icon": "alert-circle",
+			"nav-title": "Conformidad",
+			"steps": {
+				"compliance-introduction": {
+					"sub-steps": {
+						"1": {
+							"description": "Lea atentamente la siguiente información y acéptela para continuar.",
+							"nav-title": "Conformidad"
+						}
+					}
+				},
+				"compliance-questionnaire": {
+					"sub-steps": {
+						"1": {
+							"description": "Verifiquemos su elegibilidad.",
+							"nav-title": "Conformidad",
+							"questions": {
+								"annual-mileage": {
+									"label": "¿Cuál es su millaje anual?"
+								},
+								"intended-ownership-months": {
+									"label": "¿Cuánto tiempo piensa conservar el vehículo?"
+								},
+								"percentage-off-road-usage": {
+									"label": "¿Se utilizará el vehículo todo terreno durante más del 10% del tiempo?"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"finance-introduction": {
+			"icon": "card",
+			"nav-title": "Introducción a las finanzas",
+			"steps": {
+				"finance-questionnaire": {
+					"sub-steps": {
+						"1": {
+							"description": "",
+							"nav-title": "",
+							"questions": {
+								"is-customer-funding-vehicle": {
+									"label": "¿Tiene la intención de utilizar las instalaciones de un concesionario para financiar alguna parte de este vehículo?"
+								},
+								"isCustomerFundingVehicle": {
+									"label": "¿Tiene la intención de utilizar las instalaciones de un concesionario para financiar alguna parte de este vehículo?"
+								}
+							}
+						},
+						"2": {
+							"description": "",
+							"nav-title": "",
+							"questions": {
+								"expected-funding-term": {
+									"label": "¿Durante cuánto tiempo le gustaría financiar?"
+								},
+								"funding-type": {
+									"label": "¿Qué tipo de financiación piensa utilizar?"
+								},
+								"preferred-finance-provider-key": {
+									"label": "¿Fuente de financiación preferida (solo BM)?"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"first-contact": {
+			"icon": "person-add",
+			"nav-title": "Primer contacto",
+			"steps": {
+				"first-contact-disclosure": {
+					"sub-steps": {
+						"1": {
+							"description": "Para comenzar, veamos algunos detalles.",
+							"nav-title": "Primer contacto",
+							"questions": {
+								"contact-source": {
+									"label": "¿Cómo se enteró de nuestro concesionario?",
+									"options": [
+										{
+											"label": "anuncio"
+										},
+										{
+											"label": "Boca a boca"
+										},
+										{
+											"label": "Conducir por"
+										},
+										{
+											"label": "Cliente anterior"
+										},
+										{
+											"label": "Recomendación"
+										},
+										{
+											"label": "campaña"
+										},
+										{
+											"label": "Otro"
+										}
+									]
+								},
+								"contact-type": {
+									"label": "¿Método de contacto inicial?",
+									"options": [
+										{
+											"label": "Entrar"
+										},
+										{
+											"label": "Teléfono"
+										},
+										{
+											"label": "Email"
+										},
+										{
+											"label": "Consulta web"
+										}
+									]
+								}
+							}
+						},
+						"2": {
+							"description": "Lea atentamente la siguiente Declaración de divulgación inicial y, si está satisfecho con ella, elija \"Aceptar y continuar\"",
+							"nav-title": "Informacion importante"
+						}
+					}
+				},
+				"first-contact-preferences": {
+					"sub-steps": {
+						"1": {
+							"description": "Familiarización",
+							"nav-title": "Tus preferencias",
+							"questions": {
+								"customerhastradein": {
+									"label": "¿Estarás buscando cambiar esto?"
+								}
+							}
+						},
+						"2": {
+							"description": "Comprender sus necesidades automovilísticas",
+							"nav-title": "Tus preferencias"
+						},
+						"3": {
+							"description": "Costo y características",
+							"nav-title": "Tus preferencias"
+						},
+						"4": {
+							"description": "Más",
+							"nav-title": "Tus preferencias"
+						}
+					}
+				}
+			}
+		},
+		"requirements": {
+			"icon": "bag-add",
+			"nav-title": "Requerimientos",
+			"steps": {
+				"find-vehicle": {
+					"sub-steps": {
+						"1": {
+							"description": "¡Vamos a empezar!",
+							"nav-title": "Sus requisitos",
+							"questions": {
+								"new-vehicle": {
+									"label": "¿Qué estás buscando?",
+									"options": [
+										{
+											"label": "Nuevo"
+										},
+										{
+											"label": "Usado"
+										},
+										{
+											"label": "Stock del distribuidor"
+										}
+									]
+								}
+							}
+						},
+						"2": {
+							"description": "¿Qué tipo de vehículo buscas?",
+							"nav-title": "Encuentra tu nuevo vehículo"
+						},
+						"3": {
+							"description": "Seleccione su vehículo elegido o elija más de un vehículo para hacer una comparación.",
+							"nav-title": "Su selección de vehículo"
+						},
+						"4": {
+							"description": "Agregue información adicional",
+							"nav-title": "Tus vehículos seleccionados"
+						}
+					}
+				},
+				"vehicle-confirmation": {
+					"sub-steps": {
+						"1": {
+							"description": "",
+							"nav-title": "Su vehículo seleccionado"
+						},
+						"2": {
+							"description": "",
+							"nav-title": "Su vehículo seleccionado",
+							"questions": {
+								"tyre-type": {
+									"label": "¿Este vehículo tiene llantas desinfladas?"
+								},
+								"used-for-business": {
+									"label": "¿Cuál es el tipo de compra de vehículo?",
+									"options": [
+										{
+											"label": "Individual"
+										},
+										{
+											"label": "Empresa"
+										}
+									]
+								},
+								"vehicle-residence-region-code": {
+									"label": "¿En qué estado se guardará este vehículo?"
+								},
+								"warranty-expiry-date": {
+									"label": "¿Fecha de vencimiento de cualquier garantía aplicable a este vehículo?"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

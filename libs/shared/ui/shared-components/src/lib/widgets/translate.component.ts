@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { DateAdapter } from '@angular/material/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalStorageService, SettingsService } from '@shared-core';
-
 
 @Component({
   selector: 'app-translate',
@@ -11,10 +11,14 @@ import { LocalStorageService, SettingsService } from '@shared-core';
     </button>
 
     <mat-menu #menu="matMenu">
-      <button mat-menu-item *ngFor="let lang of langs | keyvalue" (click)="useLanguage(lang.key)">
+      <button
+        mat-menu-item
+        *ngFor="let lang of langs | keyvalue"
+        (click)="useLanguage(lang.key)"
+      >
         <span>{{ lang.value }}</span>
       </button>
-    </mat-menu> 
+    </mat-menu>
   `,
   styles: [],
 })
@@ -27,12 +31,17 @@ export class TranslateComponent {
   constructor(
     private _translate: TranslateService,
     private _settings: SettingsService,
-    private _storageService: LocalStorageService
+    private _storageService: LocalStorageService,
+    private _adapter: DateAdapter<any>
   ) {}
 
   useLanguage(language: string) {
+    //Change the language used in the app
     this._translate.use(language);
     this._settings.setLanguage(language);
+
+    //Changes the language of datepickers
+    this._adapter.setLocale(language);
     this._storageService.set('lang', language);
   }
 }

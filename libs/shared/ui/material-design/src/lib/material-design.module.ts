@@ -7,6 +7,7 @@ import {
   MAT_MOMENT_DATE_FORMATS,
   MomentDateAdapter
 } from '@angular/material-moment-adapter';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import {
@@ -31,6 +32,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatDatepickerModule,
     MatMomentDateModule,
+    MatAutocompleteModule,
   ],
 })
 export class UiMaterialDesignModule {
