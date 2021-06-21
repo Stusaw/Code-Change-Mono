@@ -5,10 +5,26 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   template: `
     <ion-header>
       <ion-toolbar>
-        <ion-title size="small">Home</ion-title>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <!-- <ion-menu-toggle auto-hide="false"></ion-menu-toggle> -->
+        </ion-buttons>
         <div slot="start">
-            <app-translate></app-translate> 
+          <app-translate></app-translate>
         </div>
+
+        <ion-buttons slot="end">
+          <ion-button color="primary">
+            <ion-icon
+              slot="start"
+              size="large"
+              name="person-circle-outline"
+            ></ion-icon>
+          </ion-button>
+          <ion-button color="primary">
+            <ion-icon slot="start" size="large" name="exit-sharp"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
   `,

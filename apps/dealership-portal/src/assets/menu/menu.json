@@ -1,0 +1,68 @@
+{
+    "menu": [
+        {
+            "route": "home",
+            "name": "home",
+            "icon": "home",
+            "permissions": [
+                "TRANSACTION MANAGER"
+            ]
+        },
+        {
+            "route": "dealer/dashboard",
+            "name": "dashboard",
+            "icon": "grid",
+            "permissions": [
+                "TRANSACTION MANAGER"
+            ]
+        },
+        {
+            "route": "sale/start",
+            "name": "new-sale",
+            "icon": "speedometer",
+            "permissions": [
+                "TRANSACTION MANAGER"
+            ]
+        },
+        {
+            "route": "find-customer",
+            "name": "find-customer",
+            "icon": "people-circle",
+            "permissions": [
+                "TRANSACTION MANAGER"
+            ]
+        },
+        {
+            "route": "live-activity",
+            "name": "live-activity",
+            "icon": "car",
+            "permissions": [
+                "TRANSACTION MANAGER"
+            ]
+        },
+        {
+            "route": "archive",
+            "name": "archive",
+            "icon": "folder-open",
+            "permissions": [
+                "TRANSACTION MANAGER"
+            ]
+        },
+        {
+            "route": "policies",
+            "name": "policies",
+            "icon": "newspaper",
+            "permissions": [
+                "TRANSACTION MANAGER"
+            ]
+        },
+        {
+            "route": "reports",
+            "name": "reports",
+            "icon": "pie-chart",
+            "permissions": [
+                "TRANSACTION MANAGER"
+            ]
+        }
+    ]
+}

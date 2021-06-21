@@ -56,6 +56,62 @@
 			"no": "No",
 			"yes": "Yes"
 		},
+		"routes": {
+			"account": {
+				"label": "Account Settings"
+			},
+			"active_customers": {
+				"label": "Active Customers"
+			},
+			"admin_home": {
+				"label": "Admin Home"
+			},
+			"archive": {
+				"label": "Archive"
+			},
+			"dashboard": {
+				"label": "Dashboard"
+			},
+			"deliveries": {
+				"label": "Deliveries"
+			},
+			"find_customer": {
+				"label": "Find Customer"
+			},
+			"follow_ups": {
+				"label": "Follow Ups"
+			},
+			"home": {
+				"label": "Home"
+			},
+			"live_activity": {
+				"label": "Live Activity"
+			},
+			"logout": {
+				"label": "Logout"
+			},
+			"main_menu": {
+				"label": "Main Menu"
+			},
+			"new_sale": {
+				"label": "New Sale",
+				"sections": {
+					"customer_details": "Enter customer details"
+				}
+			},
+			"notifications": {
+				"label": "Notifications"
+			},
+			"policies": {
+				"label": "Policies"
+			},
+			"reports": {
+				"label": "Reports"
+			},
+			"user_guide": {
+				"label": "User Guide"
+			}
+		},
 		"sorting": {
 			"highest_value": "Highest value",
 			"lowest_value": "Lowest value"

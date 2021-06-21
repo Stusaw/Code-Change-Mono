@@ -1,34 +1,53 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'code-change-dealcard',
   template: `
-        <ion-grid>
-              <ion-row>
-                  <ion-col>
-                    <ion-card>
-                        <ion-card-header>
-                          <ion-card-subtitle>MFE</ion-card-subtitle>
-                          <ion-card-title>This is a Mirco-frontend</ion-card-title>
-                        </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>MFE</ion-card-subtitle>
+              <ion-card-title>This is a Mirco-frontend</ion-card-title>
+            </ion-card-header>
 
-                        <ion-card-content>
-                          Keep close to Nature's heart... and break clear away, once in awhile,
-                          and climb a mountain or spend a week in the woods. Wash your spirit clean.
-                        </ion-card-content>
-                      </ion-card>
-                  </ion-col>
-              </ion-row>
-        </ion-grid>
+            <ion-card-content>
+              {{ data.deal }}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   `,
   styleUrls: ['./dealcard.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DealcardComponent implements OnInit {
+export class DealcardComponent implements OnInit, OnDestroy {
+  public data: any;
+  private subs = new SubSink();
 
-  constructor() { }
+  constructor(private _activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.configure();
   }
 
+  configure() {
+    //Store view model
+    this.subs.sink = this._activatedRoute.data.subscribe(
+      (data) => (this.data = data)
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
+  }
 }

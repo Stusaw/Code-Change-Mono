@@ -7,7 +7,7 @@ import {
 
 const routes: Routes = [
   {
-    path: 'mfe',
+    path: 'dealcard/:dealId',
     loadChildren: () =>
       loadRemoteModule({
         remoteName: 'mfe',

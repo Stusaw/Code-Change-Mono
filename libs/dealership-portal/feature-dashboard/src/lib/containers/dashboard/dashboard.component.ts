@@ -105,7 +105,7 @@ export class DashboardComponent implements OnInit {
       },
       fieldGroup: [
         {
-          key: 'input',
+          key: 'input3',
           type: 'input',
           templateOptions: {
             label: 'global.form_fields.personal.firstname',
@@ -118,7 +118,7 @@ export class DashboardComponent implements OnInit {
           },
         },
         {
-          key: 'input2',
+          key: 'input4',
           type: 'input',
           templateOptions: {
             label: 'global.form_fields.personal.firstname',

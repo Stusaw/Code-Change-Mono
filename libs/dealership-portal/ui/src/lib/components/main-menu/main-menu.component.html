@@ -1,0 +1,19 @@
+<ion-menu menuId="main" contentId="main" side="start" disabled="false">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>{{'global.routes.main_menu.label' | translate}}</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list lines="full">
+            <ion-menu-toggle *ngFor="let menuItem of menus$ | async" auto-hide="false">
+                <ion-item button [routerLink]="buildRoute([menuItem.route])">
+                    <ion-icon slot="start" [name]='menuItem.icon'></ion-icon>
+                    <ion-label>{{ resolveMenuLabel(menuItem.name) | translate}}</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+            <ion-list-header>
+            </ion-list-header>
+        </ion-list>
+    </ion-content>
+</ion-menu>

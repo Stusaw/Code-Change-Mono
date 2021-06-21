@@ -7,19 +7,20 @@ import {
 import { FORMLY_CONFIG } from '@ngx-formly/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DomainModule } from '@shared-domain';
-import { FormlyConfigModule, registerTranslateExtension } from '@shared-ui-formly';
+import {
+  FormlyConfigModule,
+  registerTranslateExtension
+} from '@shared-ui-formly';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { TranslateLangService as LanguageBootstrapService } from './bootstrap/language-bootstrap.service';
 import { AppCommonServices } from './common';
 import { AppInitialiserProviders } from './initialisers/app-initialisers';
 import { DefaultInterceptor } from './interceptors/default-interceptor';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
-
 @NgModule({
-  imports: [
-    DomainModule,
-    FormlyConfigModule.forRoot()
-  ]
+  imports: [DomainModule, FormlyConfigModule.forRoot(), NgxSpinnerModule],
+  exports: [NgxSpinnerModule]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslationModule } from '@shared-translation';
+import { DealercardResolver } from './@resolvers/dealcard.resolver';
 import { DealcardComponent } from './containers/dealcard/dealcard.component';
 
 @NgModule({
@@ -9,11 +10,17 @@ import { DealcardComponent } from './containers/dealcard/dealcard.component';
     CommonModule,
     TranslationModule,
     RouterModule.forChild([
-      { path: '', pathMatch: 'full', component: DealcardComponent },
+      {
+        path: '',
+        pathMatch: 'full',
+        component: DealcardComponent,
+        resolve: { deal: DealercardResolver },
+      },
     ]),
   ],
   declarations: [DealcardComponent],
   exports: [DealcardComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  providers: [DealercardResolver],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FeatureDealcardModule {}

@@ -1,73 +1,129 @@
 {
-	"global": {
-		"actions": {
-			"cancel": "Cancelar",
-			"continue": "Continuar",
-			"edit": "Editar",
-			"exit": "salida",
-			"load_more": "Carga más",
-			"login": "Iniciar sesión",
-			"logout": "Cerrar sesión",
-			"next": "Siguiente",
-			"ok": "De acuerdo",
-			"please_select": "Por favor seleccione",
-			"previous": "Anterior",
-			"reset": "Reiniciar",
-			"run": "correr",
-			"save": "Salvar",
-			"search": "Buscar",
-			"select": "Seleccionar",
-			"send_request": "Enviar petición",
-			"start": "Comienzo"
-		},
-		"form_fields": {
-			"common": {
-				"optional_placeholder": "Opcional",
-				"required_placeholder": "Necesario"
-			},
-			"personal": {
-				"email": "Email",
-				"firstname": "Nombre de pila",
-				"fullname": "Nombre del cliente",
-				"lastname": "Apellido",
-				"telephone_number": "Número de teléfono"
-			},
-			"vehicle": {
-				"deposit": "Depositar",
-				"engine_number": "Número de motor",
-				"finance_settlement": "Liquidación financiera",
-				"mileage": "Kilometraje actual",
-				"part_exchange": "Intercambio de la parte",
-				"price": "Precio de compra",
-				"registration_number": "Número de registro",
-				"stock_number": "Número de inventario",
-				"vin": "VIN"
-			}
-		},
-		"input_masks": {
-			"engine_number": "999",
-			"registration_number": "9"
-		},
-		"locale": {
-			"currency_symbol": "&#163;"
-		},
-		"responses": {
-			"idk": "No lo se",
-			"no": "No",
-			"yes": "Sí"
-		},
-		"sorting": {
-			"highest_value": "Valor más alto",
-			"lowest_value": "Valor más bajo"
-		},
-		"validation": {
-			"invalid-email": "Email inválido",
-			"max": "Este valor debe ser menor que {{number}}",
-			"maxlength": "Este valor debe tener menos de {{number}} caracteres.",
-			"min": "Este valor debe ser superior a {{number}}",
-			"minlength": "Debe tener al menos {{number}} caracteres",
-			"required": "este campo es requerido",
-			"requiredtrue": "Debes aceptar antes de continuar"
-		}
-	}
+  "global": {
+    "actions": {
+      "cancel": "Cancelar",
+      "continue": "Continuar",
+      "edit": "Editar",
+      "exit": "salida",
+      "load_more": "Carga más",
+      "login": "Iniciar sesión",
+      "logout": "Cerrar sesión",
+      "next": "Siguiente",
+      "ok": "De acuerdo",
+      "please_select": "Por favor seleccione",
+      "previous": "Anterior",
+      "reset": "Reiniciar",
+      "run": "correr",
+      "save": "Salvar",
+      "search": "Buscar",
+      "select": "Seleccionar",
+      "send_request": "Enviar petición",
+      "start": "Comienzo"
+    },
+    "form_fields": {
+      "common": {
+        "optional_placeholder": "Opcional",
+        "required_placeholder": "Necesario"
+      },
+      "personal": {
+        "email": "Email",
+        "firstname": "Nombre de pila",
+        "fullname": "Nombre del cliente",
+        "lastname": "Apellido",
+        "telephone_number": "Número de teléfono"
+      },
+      "vehicle": {
+        "deposit": "Depositar",
+        "engine_number": "Número de motor",
+        "finance_settlement": "Liquidación financiera",
+        "mileage": "Kilometraje actual",
+        "part_exchange": "Intercambio de la parte",
+        "price": "Precio de compra",
+        "registration_number": "Número de registro",
+        "stock_number": "Número de inventario",
+        "vin": "VIN"
+      }
+    },
+    "input_masks": {
+      "engine_number": "999",
+      "registration_number": "9"
+    },
+    "locale": {
+      "currency_symbol": "&#163;"
+    },
+    "responses": {
+      "idk": "No lo se",
+      "no": "No",
+      "yes": "Sí"
+    },
+    "routes": {
+      "account": {
+        "label": "Configuraciones de la cuenta"
+      },
+      "active_customers": {
+        "label": "Clientes activos"
+      },
+      "admin_home": {
+        "label": "Admin Inicio"
+      },
+      "archive": {
+        "label": "archivo"
+      },
+      "dashboard": {
+        "label": "Tablero"
+      },
+      "deliveries": {
+        "label": "Entregas"
+      },
+      "find_customer": {
+        "label": "Encuentra cliente"
+      },
+      "follow_ups": {
+        "label": "Seguimientos"
+      },
+      "home": {
+        "label": "Casa"
+      },
+      "live_activity": {
+        "label": "Actividad en vivo"
+      },
+      "logout": {
+        "label": "Cerrar sesión"
+      },
+      "main_menu": {
+        "label": "Menú principal"
+      },
+      "new_sale": {
+        "label": "Nueva venta",
+        "sections": {
+          "customer_details": "Ingrese los detalles del cliente"
+        }
+      },
+      "notifications": {
+        "label": "Notificaciones"
+      },
+      "policies": {
+        "label": "Las políticas"
+      },
+      "reports": {
+        "label": "informes"
+      },
+      "user_guide": {
+        "label": "Guía del usuario"
+      }
+    },
+    "sorting": {
+      "highest_value": "Valor más alto",
+      "lowest_value": "Valor más bajo"
+    },
+    "validation": {
+      "invalid-email": "Email inválido",
+      "max": "Este valor debe ser menor que {{number}}",
+      "maxlength": "Este valor debe tener menos de {{number}} caracteres.",
+      "min": "Este valor debe ser superior a {{number}}",
+      "minlength": "Debe tener al menos {{number}} caracteres",
+      "required": "este campo es requerido",
+      "requiredtrue": "Debes aceptar antes de continuar"
+    }
+  }
 }
