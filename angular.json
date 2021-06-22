@@ -628,6 +628,7 @@
             ],
             "styles": [
               "apps/deal-configurator-mfe/src/styles.scss",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               {
                 "input": "apps\\deal-configurator-mfe/src/theme/variables.scss"
               }
@@ -1164,6 +1165,47 @@
             "lintFilePatterns": [
               "libs/dealership-portal/ui/src/**/*.ts",
               "libs/dealership-portal/ui/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "deal-configurator-mfe-feature-insurance": {
+      "projectType": "library",
+      "root": "libs/deal-configurator-mfe/feature-insurance",
+      "sourceRoot": "libs/deal-configurator-mfe/feature-insurance/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/deal-configurator-mfe/feature-insurance"],
+          "options": {
+            "project": "libs/deal-configurator-mfe/feature-insurance/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/deal-configurator-mfe/feature-insurance/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/deal-configurator-mfe/feature-insurance/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/deal-configurator-mfe/feature-insurance"],
+          "options": {
+            "jestConfig": "libs/deal-configurator-mfe/feature-insurance/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/deal-configurator-mfe/feature-insurance/src/**/*.ts",
+              "libs/deal-configurator-mfe/feature-insurance/src/**/*.html"
             ]
           }
         }

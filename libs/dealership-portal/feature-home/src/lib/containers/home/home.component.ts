@@ -5,7 +5,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     <ion-content [fullscreen]="true">
       <app-header></app-header>
       <div id="container">
-        
+          <a [routerLink]="['/dealcard', '123']" routerLinkActive="router-link-active">Go to last sale</a>
       </div>
     </ion-content>
   `,

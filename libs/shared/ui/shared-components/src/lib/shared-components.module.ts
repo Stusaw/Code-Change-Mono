@@ -6,7 +6,7 @@ import { TranslateComponent } from './widgets/translate.component';
 @NgModule({
   imports: [CommonModule, UiMaterialDesignModule.forRoot()],
   declarations: [TranslateComponent],
-  exports: [TranslateComponent],
+  exports: [TranslateComponent, UiMaterialDesignModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharedComponentsModule {}

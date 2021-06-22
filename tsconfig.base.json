@@ -25,6 +25,9 @@
       "@deal-configurator-mfe/feature-dealcard": [
         "libs/deal-configurator-mfe/feature-dealcard/src/index.ts"
       ],
+      "@deal-configurator-mfe/feature-insurance": [
+        "libs/deal-configurator-mfe/feature-insurance/src/index.ts"
+      ],
       "@shared-ui-material-design": [
         "libs/shared/ui/material-design/src/index.ts"
       ],

@@ -8,24 +8,95 @@ import { ActivatedRoute } from '@angular/router';
 import { SubSink } from 'subsink';
 
 @Component({
-  selector: 'code-change-dealcard',
+  selector: 'dealcard',
   template: `
-    <ion-grid>
-      <ion-row>
-        <ion-col>
+    <ion-content>
+      <div
+        fxLayout="row"
+        fxLayoutAlign="space-evenly stretch"
+        fxLayoutGap="10px"
+      >
+        <div fxFlex>
           <ion-card>
             <ion-card-header>
-              <ion-card-subtitle>MFE</ion-card-subtitle>
-              <ion-card-title>This is a Mirco-frontend</ion-card-title>
+              <ion-card-title>Personal Information</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content> </ion-card-content>
+          </ion-card>
+        </div>
+        <div fxFlex>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Vehicle Information</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content> </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+      <div
+        fxLayout="row"
+        fxLayoutAlign="space-evenly stretch"
+        fxLayoutGap="10px"
+      >
+        <div fxFlex>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Get a Finance Quote</ion-card-title>
             </ion-card-header>
 
             <ion-card-content>
-              {{ data.deal }}
+              <p>
+                <a mat-flat-button color="primary"
+                  [routerLink]="['finance']"
+                  queryParamsHandling="preserve"
+                  routerLinkActive="router-link-active"
+                  >Go to Finance</a
+                >
+              </p>
+              <button mat-raised-button color="primary">Quote</button>
             </ion-card-content>
           </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+        </div>
+        <div fxFlex>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Comprehensive Motor Insurance</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p>
+                <a
+                  [routerLink]="['mvi']"
+                  queryParamsHandling="preserve"
+                  routerLinkActive="router-link-active"
+                  >Go to mvi</a
+                >
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <div fxFlex>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Get an Insurance Quote</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p>
+                <a
+                  [routerLink]="['insurance']"
+                  queryParamsHandling="preserve"
+                  routerLinkActive="router-link-active"
+                  >Go to insurance</a
+                >
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+    </ion-content>
   `,
   styleUrls: ['./dealcard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

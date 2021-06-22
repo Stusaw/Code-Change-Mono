@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslationModule } from '@shared-translation';
+import { SharedComponentsModule } from '@shared-ui-components';
 import { DealercardResolver } from './@resolvers/dealcard.resolver';
 import { DealcardComponent } from './containers/dealcard/dealcard.component';
 
@@ -9,12 +10,20 @@ import { DealcardComponent } from './containers/dealcard/dealcard.component';
   imports: [
     CommonModule,
     TranslationModule,
+    SharedComponentsModule,
     RouterModule.forChild([
       {
         path: '',
-        pathMatch: 'full',
+        pathMatch: 'prefix',
         component: DealcardComponent,
         resolve: { deal: DealercardResolver },
+      },
+      {
+        path: 'insurance',
+        loadChildren: () =>
+          import('@deal-configurator-mfe/feature-insurance').then(
+            (m) => m.FeatureInsuranceModule
+          ),
       },
     ]),
   ],

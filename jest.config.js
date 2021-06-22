@@ -15,5 +15,6 @@ module.exports = {
     '<rootDir>/libs/shared/ui/custom-pipes',
     '<rootDir>/libs/shared/ui/shared-components',
     '<rootDir>/libs/dealership-portal/ui',
+    '<rootDir>/libs/deal-configurator-mfe/feature-insurance',
   ],
 };

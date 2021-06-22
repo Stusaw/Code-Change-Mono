@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
 @Injectable()
-export class DealercardResolver implements Resolve<any> {
+export class InsuranceResolver implements Resolve<any> {
   constructor() // private _saleCycleService: SaleCycleService
   {}
 

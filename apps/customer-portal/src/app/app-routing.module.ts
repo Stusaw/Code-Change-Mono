@@ -14,7 +14,7 @@ const routes: Routes = [
       import('./folder/folder.module').then((m) => m.FolderPageModule),
   },
   {
-    path: 'mfe/:dealId',
+    path: 'dealcard/:dealId',
     loadChildren: () =>
       loadRemoteModule({
         remoteName: 'mfe',
