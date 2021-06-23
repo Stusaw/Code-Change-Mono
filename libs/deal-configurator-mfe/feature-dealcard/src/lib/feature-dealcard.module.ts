@@ -25,6 +25,20 @@ import { DealcardComponent } from './containers/dealcard/dealcard.component';
             (m) => m.FeatureInsuranceModule
           ),
       },
+      {
+        path: 'finance',
+        loadChildren: () =>
+          import('@deal-configurator-mfe/feature-finance').then(
+            (m) => m.FeatureFinanceModule
+          ),
+      },
+      {
+        path: 'motor-insurance',
+        loadChildren: () =>
+          import('@deal-configurator-mfe/feature-motor-insurance').then(
+            (m) => m.FeatureMotorInsuranceModule
+          ),
+      },
     ]),
   ],
   declarations: [DealcardComponent],

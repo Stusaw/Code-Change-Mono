@@ -12,89 +12,17 @@ import { SubSink } from 'subsink';
   template: `
     <ion-content>
       <div
-        fxLayout="row"
-        fxLayoutAlign="space-evenly stretch"
-        fxLayoutGap="10px"
+        gdAreas="header header | side content | footer footer"
+        gdGap="16px"
+        gdRows="auto auto auto"
+        gdAreas.lt-md="header | side | content | footer"
+        gdRows.lt-md="auto auto auto auto"
+        gdColumns.lt-md="auto 10px auto auto"
       >
-        <div fxFlex>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Personal Information</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content> </ion-card-content>
-          </ion-card>
-        </div>
-        <div fxFlex>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Vehicle Information</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content> </ion-card-content>
-          </ion-card>
-        </div>
-      </div>
-      <div
-        fxLayout="row"
-        fxLayoutAlign="space-evenly stretch"
-        fxLayoutGap="10px"
-      >
-        <div fxFlex>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Get a Finance Quote</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content>
-              <p>
-                <a mat-flat-button color="primary"
-                  [routerLink]="['finance']"
-                  queryParamsHandling="preserve"
-                  routerLinkActive="router-link-active"
-                  >Go to Finance</a
-                >
-              </p>
-              <button mat-raised-button color="primary">Quote</button>
-            </ion-card-content>
-          </ion-card>
-        </div>
-        <div fxFlex>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Comprehensive Motor Insurance</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content>
-              <p>
-                <a
-                  [routerLink]="['mvi']"
-                  queryParamsHandling="preserve"
-                  routerLinkActive="router-link-active"
-                  >Go to mvi</a
-                >
-              </p>
-            </ion-card-content>
-          </ion-card>
-        </div>
-        <div fxFlex>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>Get an Insurance Quote</ion-card-title>
-            </ion-card-header>
-
-            <ion-card-content>
-              <p>
-                <a
-                  [routerLink]="['insurance']"
-                  queryParamsHandling="preserve"
-                  routerLinkActive="router-link-active"
-                  >Go to insurance</a
-                >
-              </p>
-            </ion-card-content>
-          </ion-card>
-        </div>
+        <div gdArea="header">Header</div>
+        <div gdArea="side">Side</div>
+        <div gdArea="content">Content</div>
+        <div gdArea="footer">Footer</div>
       </div>
     </ion-content>
   `,

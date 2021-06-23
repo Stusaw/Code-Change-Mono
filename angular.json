@@ -34,348 +34,6 @@
     }
   },
   "projects": {
-    "dealership-portal": {
-      "projectType": "application",
-      "root": "apps/dealership-portal",
-      "sourceRoot": "apps/dealership-portal/src",
-      "prefix": "code-change",
-      "architect": {
-        "build": {
-          "builder": "ngx-build-plus:browser",
-          "options": {
-            "outputPath": "dist/apps/dealership-portal",
-            "index": "apps/dealership-portal/src/index.html",
-            "main": "apps/dealership-portal/src/main.ts",
-            "polyfills": "apps/dealership-portal/src/polyfills.ts",
-            "tsConfig": "apps/dealership-portal/tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "apps/dealership-portal/src/assets",
-              {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
-              },
-              {
-                "input": "libs/shared/translation/src/assets/i18n",
-                "glob": "**/*",
-                "output": "assets/i18n"
-              },
-              {
-                "input": "libs/dealership-portal/feature-home/src/assets/i18n/feature-home",
-                "glob": "*.json",
-                "output": "assets/i18n/feature-home"
-              },
-              {
-                "input": "libs/dealership-portal/feature-dashboard/src/assets/i18n/feature-dashboard",
-                "glob": "*.json",
-                "output": "assets/i18n/feature-dashboard"
-              }
-            ],
-            "styles": [
-              "apps/dealership-portal/src/styles.scss",
-              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              {
-                "input": "apps\\dealership-portal/src/theme/variables.scss"
-              }
-            ],
-            "scripts": [],
-            "extraWebpackConfig": "apps/dealership-portal/webpack.config.js"
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/dealership-portal/src/environments/environment.ts",
-                  "with": "apps/dealership-portal/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ],
-              "extraWebpackConfig": "apps/dealership-portal/webpack.prod.config.js"
-            }
-          }
-        },
-        "serve": {
-          "builder": "ngx-build-plus:dev-server",
-          "options": {
-            "browserTarget": "dealership-portal:build",
-            "extraWebpackConfig": "apps/dealership-portal/webpack.config.js",
-            "port": 4200,
-            "sourceMap": {
-              "scripts": true,
-              "styles": true,
-              "vendor": true
-            }
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "dealership-portal:build:production",
-              "extraWebpackConfig": "apps/dealership-portal/webpack.prod.config.js"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "dealership-portal:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/dealership-portal/src/**/*.ts",
-              "apps/dealership-portal/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "ngx-build-plus:karma",
-          "outputs": ["coverage/apps/dealership-portal"],
-          "options": {
-            "jestConfig": "apps/dealership-portal/jest.config.js",
-            "passWithNoTests": true,
-            "extraWebpackConfig": "apps/dealership-portal/webpack.config.js"
-          }
-        },
-        "cap": {
-          "builder": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "--help"
-          }
-        },
-        "add": {
-          "builder": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "add",
-            "packageInstall": true
-          },
-          "configurations": {
-            "ios": {
-              "cmd": "add ios"
-            },
-            "android": {
-              "cmd": "add android"
-            }
-          }
-        },
-        "copy": {
-          "builder": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "copy",
-            "packageInstall": false
-          },
-          "configurations": {
-            "ios": {
-              "cmd": "copy ios"
-            },
-            "android": {
-              "cmd": "copy android"
-            }
-          }
-        },
-        "open": {
-          "builder": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "open",
-            "packageInstall": false
-          },
-          "configurations": {
-            "ios": {
-              "cmd": "open ios"
-            },
-            "android": {
-              "cmd": "open android"
-            }
-          }
-        },
-        "sync": {
-          "builder": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "sync",
-            "packageInstall": true
-          },
-          "configurations": {
-            "ios": {
-              "cmd": "sync ios"
-            },
-            "android": {
-              "cmd": "sync android"
-            }
-          }
-        },
-        "update": {
-          "builder": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "update",
-            "packageInstall": true
-          },
-          "configurations": {
-            "ios": {
-              "cmd": "update ios"
-            },
-            "android": {
-              "cmd": "update android"
-            }
-          }
-        }
-      }
-    },
-    "dealership-portal-e2e": {
-      "root": "apps/dealership-portal-e2e",
-      "sourceRoot": "apps/dealership-portal-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/dealership-portal-e2e/cypress.json",
-            "tsConfig": "apps/dealership-portal-e2e/tsconfig.e2e.json",
-            "devServerTarget": "dealership-portal:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "dealership-portal:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/dealership-portal-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "dealership-portal-feature-dashboard": {
-      "projectType": "library",
-      "root": "libs/dealership-portal/feature-dashboard",
-      "sourceRoot": "libs/dealership-portal/feature-dashboard/src",
-      "prefix": "code-change",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/dealership-portal/feature-dashboard/tsconfig.lib.json",
-            "project": "libs/dealership-portal/feature-dashboard/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/dealership-portal/feature-dashboard/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/dealership-portal/feature-dashboard/src/**/*.ts",
-              "libs/dealership-portal/feature-dashboard/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/dealership-portal/feature-dashboard"],
-          "options": {
-            "jestConfig": "libs/dealership-portal/feature-dashboard/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "dealership-portal-feature-home": {
-      "projectType": "library",
-      "root": "libs/dealership-portal/feature-home",
-      "sourceRoot": "libs/dealership-portal/feature-home/src",
-      "prefix": "code-change",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/dealership-portal/feature-home/tsconfig.lib.json",
-            "project": "libs/dealership-portal/feature-home/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/dealership-portal/feature-home/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/dealership-portal/feature-home/src/**/*.ts",
-              "libs/dealership-portal/feature-home/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/dealership-portal/feature-home"],
-          "options": {
-            "jestConfig": "libs/dealership-portal/feature-home/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "shared-ui-material-design": {
-      "projectType": "library",
-      "root": "libs/shared/ui/material-design",
-      "sourceRoot": "libs/shared/ui/material-design/src",
-      "prefix": "code-change",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/shared/ui/material-design/tsconfig.lib.json",
-            "project": "libs/shared/ui/material-design/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/shared/ui/material-design/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/ui/material-design/src/**/*.ts",
-              "libs/shared/ui/material-design/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/ui/material-design"],
-          "options": {
-            "jestConfig": "libs/shared/ui/material-design/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "customer-portal": {
       "projectType": "application",
       "root": "apps/customer-portal",
@@ -856,6 +514,479 @@
         }
       }
     },
+    "deal-configurator-mfe-feature-finance": {
+      "projectType": "library",
+      "root": "libs/deal-configurator-mfe/feature-finance",
+      "sourceRoot": "libs/deal-configurator-mfe/feature-finance/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/deal-configurator-mfe/feature-finance"],
+          "options": {
+            "project": "libs/deal-configurator-mfe/feature-finance/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/deal-configurator-mfe/feature-finance/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/deal-configurator-mfe/feature-finance/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/deal-configurator-mfe/feature-finance"],
+          "options": {
+            "jestConfig": "libs/deal-configurator-mfe/feature-finance/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/deal-configurator-mfe/feature-finance/src/**/*.ts",
+              "libs/deal-configurator-mfe/feature-finance/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "deal-configurator-mfe-feature-insurance": {
+      "projectType": "library",
+      "root": "libs/deal-configurator-mfe/feature-insurance",
+      "sourceRoot": "libs/deal-configurator-mfe/feature-insurance/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/deal-configurator-mfe/feature-insurance"],
+          "options": {
+            "project": "libs/deal-configurator-mfe/feature-insurance/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/deal-configurator-mfe/feature-insurance/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/deal-configurator-mfe/feature-insurance/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/deal-configurator-mfe/feature-insurance"],
+          "options": {
+            "jestConfig": "libs/deal-configurator-mfe/feature-insurance/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/deal-configurator-mfe/feature-insurance/src/**/*.ts",
+              "libs/deal-configurator-mfe/feature-insurance/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "deal-configurator-mfe-feature-motor-insurance": {
+      "projectType": "library",
+      "root": "libs/deal-configurator-mfe/feature-motor-insurance",
+      "sourceRoot": "libs/deal-configurator-mfe/feature-motor-insurance/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": [
+            "dist/libs/deal-configurator-mfe/feature-motor-insurance"
+          ],
+          "options": {
+            "project": "libs/deal-configurator-mfe/feature-motor-insurance/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/deal-configurator-mfe/feature-motor-insurance/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/deal-configurator-mfe/feature-motor-insurance/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/deal-configurator-mfe/feature-motor-insurance"
+          ],
+          "options": {
+            "jestConfig": "libs/deal-configurator-mfe/feature-motor-insurance/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/deal-configurator-mfe/feature-motor-insurance/src/**/*.ts",
+              "libs/deal-configurator-mfe/feature-motor-insurance/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "dealership-portal": {
+      "projectType": "application",
+      "root": "apps/dealership-portal",
+      "sourceRoot": "apps/dealership-portal/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/apps/dealership-portal",
+            "index": "apps/dealership-portal/src/index.html",
+            "main": "apps/dealership-portal/src/main.ts",
+            "polyfills": "apps/dealership-portal/src/polyfills.ts",
+            "tsConfig": "apps/dealership-portal/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/dealership-portal/src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              },
+              {
+                "input": "libs/shared/translation/src/assets/i18n",
+                "glob": "**/*",
+                "output": "assets/i18n"
+              },
+              {
+                "input": "libs/dealership-portal/feature-home/src/assets/i18n/feature-home",
+                "glob": "*.json",
+                "output": "assets/i18n/feature-home"
+              },
+              {
+                "input": "libs/dealership-portal/feature-dashboard/src/assets/i18n/feature-dashboard",
+                "glob": "*.json",
+                "output": "assets/i18n/feature-dashboard"
+              }
+            ],
+            "styles": [
+              "apps/dealership-portal/src/styles.scss",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              {
+                "input": "apps\\dealership-portal/src/theme/variables.scss"
+              }
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "apps/dealership-portal/webpack.config.js"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dealership-portal/src/environments/environment.ts",
+                  "with": "apps/dealership-portal/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "extraWebpackConfig": "apps/dealership-portal/webpack.prod.config.js"
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "dealership-portal:build",
+            "extraWebpackConfig": "apps/dealership-portal/webpack.config.js",
+            "port": 4200,
+            "sourceMap": {
+              "scripts": true,
+              "styles": true,
+              "vendor": true
+            }
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dealership-portal:build:production",
+              "extraWebpackConfig": "apps/dealership-portal/webpack.prod.config.js"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dealership-portal:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/dealership-portal/src/**/*.ts",
+              "apps/dealership-portal/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "outputs": ["coverage/apps/dealership-portal"],
+          "options": {
+            "jestConfig": "apps/dealership-portal/jest.config.js",
+            "passWithNoTests": true,
+            "extraWebpackConfig": "apps/dealership-portal/webpack.config.js"
+          }
+        },
+        "cap": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "--help"
+          }
+        },
+        "add": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "add",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "add ios"
+            },
+            "android": {
+              "cmd": "add android"
+            }
+          }
+        },
+        "copy": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "copy",
+            "packageInstall": false
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "copy ios"
+            },
+            "android": {
+              "cmd": "copy android"
+            }
+          }
+        },
+        "open": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "open",
+            "packageInstall": false
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "open ios"
+            },
+            "android": {
+              "cmd": "open android"
+            }
+          }
+        },
+        "sync": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "sync",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "sync ios"
+            },
+            "android": {
+              "cmd": "sync android"
+            }
+          }
+        },
+        "update": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "update",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "update ios"
+            },
+            "android": {
+              "cmd": "update android"
+            }
+          }
+        }
+      }
+    },
+    "dealership-portal-e2e": {
+      "root": "apps/dealership-portal-e2e",
+      "sourceRoot": "apps/dealership-portal-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/dealership-portal-e2e/cypress.json",
+            "tsConfig": "apps/dealership-portal-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dealership-portal:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dealership-portal:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/dealership-portal-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "dealership-portal-feature-dashboard": {
+      "projectType": "library",
+      "root": "libs/dealership-portal/feature-dashboard",
+      "sourceRoot": "libs/dealership-portal/feature-dashboard/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/dealership-portal/feature-dashboard/tsconfig.lib.json",
+            "project": "libs/dealership-portal/feature-dashboard/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/dealership-portal/feature-dashboard/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dealership-portal/feature-dashboard/src/**/*.ts",
+              "libs/dealership-portal/feature-dashboard/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dealership-portal/feature-dashboard"],
+          "options": {
+            "jestConfig": "libs/dealership-portal/feature-dashboard/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "dealership-portal-feature-home": {
+      "projectType": "library",
+      "root": "libs/dealership-portal/feature-home",
+      "sourceRoot": "libs/dealership-portal/feature-home/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/dealership-portal/feature-home/tsconfig.lib.json",
+            "project": "libs/dealership-portal/feature-home/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/dealership-portal/feature-home/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dealership-portal/feature-home/src/**/*.ts",
+              "libs/dealership-portal/feature-home/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dealership-portal/feature-home"],
+          "options": {
+            "jestConfig": "libs/dealership-portal/feature-home/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "dealership-portal-ui": {
+      "projectType": "library",
+      "root": "libs/dealership-portal/ui",
+      "sourceRoot": "libs/dealership-portal/ui/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/dealership-portal/ui"],
+          "options": {
+            "project": "libs/dealership-portal/ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/dealership-portal/ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/dealership-portal/ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dealership-portal/ui"],
+          "options": {
+            "jestConfig": "libs/dealership-portal/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dealership-portal/ui/src/**/*.ts",
+              "libs/dealership-portal/ui/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "shared-core": {
       "projectType": "library",
       "root": "libs/shared/core",
@@ -967,46 +1098,6 @@
         }
       }
     },
-    "shared-ui-formly-config": {
-      "projectType": "library",
-      "root": "libs/shared/ui/formly-config",
-      "sourceRoot": "libs/shared/ui/formly-config/src",
-      "prefix": "code-change",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "project": "libs/shared/ui/formly-config/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/shared/ui/formly-config/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/shared/ui/formly-config/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/ui/formly-config"],
-          "options": {
-            "jestConfig": "libs/shared/ui/formly-config/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/ui/formly-config/src/**/*.ts",
-              "libs/shared/ui/formly-config/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "shared-translation": {
       "projectType": "library",
       "root": "libs/shared/translation",
@@ -1088,6 +1179,83 @@
         }
       }
     },
+    "shared-ui-formly-config": {
+      "projectType": "library",
+      "root": "libs/shared/ui/formly-config",
+      "sourceRoot": "libs/shared/ui/formly-config/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/shared/ui/formly-config/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/formly-config/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/ui/formly-config/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/formly-config"],
+          "options": {
+            "jestConfig": "libs/shared/ui/formly-config/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/formly-config/src/**/*.ts",
+              "libs/shared/ui/formly-config/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "shared-ui-material-design": {
+      "projectType": "library",
+      "root": "libs/shared/ui/material-design",
+      "sourceRoot": "libs/shared/ui/material-design/src",
+      "prefix": "code-change",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/shared/ui/material-design/tsconfig.lib.json",
+            "project": "libs/shared/ui/material-design/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/material-design/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/material-design/src/**/*.ts",
+              "libs/shared/ui/material-design/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/material-design"],
+          "options": {
+            "jestConfig": "libs/shared/ui/material-design/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "shared-ui-shared-components": {
       "projectType": "library",
       "root": "libs/shared/ui/shared-components",
@@ -1124,88 +1292,6 @@
             "lintFilePatterns": [
               "libs/shared/ui/shared-components/src/**/*.ts",
               "libs/shared/ui/shared-components/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "dealership-portal-ui": {
-      "projectType": "library",
-      "root": "libs/dealership-portal/ui",
-      "sourceRoot": "libs/dealership-portal/ui/src",
-      "prefix": "code-change",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/dealership-portal/ui"],
-          "options": {
-            "project": "libs/dealership-portal/ui/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/dealership-portal/ui/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/dealership-portal/ui/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/dealership-portal/ui"],
-          "options": {
-            "jestConfig": "libs/dealership-portal/ui/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/dealership-portal/ui/src/**/*.ts",
-              "libs/dealership-portal/ui/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "deal-configurator-mfe-feature-insurance": {
-      "projectType": "library",
-      "root": "libs/deal-configurator-mfe/feature-insurance",
-      "sourceRoot": "libs/deal-configurator-mfe/feature-insurance/src",
-      "prefix": "code-change",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/deal-configurator-mfe/feature-insurance"],
-          "options": {
-            "project": "libs/deal-configurator-mfe/feature-insurance/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/deal-configurator-mfe/feature-insurance/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/deal-configurator-mfe/feature-insurance/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/deal-configurator-mfe/feature-insurance"],
-          "options": {
-            "jestConfig": "libs/deal-configurator-mfe/feature-insurance/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/deal-configurator-mfe/feature-insurance/src/**/*.ts",
-              "libs/deal-configurator-mfe/feature-insurance/src/**/*.html"
             ]
           }
         }

@@ -15,33 +15,39 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@deal-configurator-mfe/feature-dealcard": [
+        "libs/deal-configurator-mfe/feature-dealcard/src/index.ts"
+      ],
+      "@deal-configurator-mfe/feature-finance": [
+        "libs/deal-configurator-mfe/feature-finance/src/index.ts"
+      ],
+      "@deal-configurator-mfe/feature-insurance": [
+        "libs/deal-configurator-mfe/feature-insurance/src/index.ts"
+      ],
+      "@deal-configurator-mfe/feature-motor-insurance": [
+        "libs/deal-configurator-mfe/feature-motor-insurance/src/index.ts"
+      ],
+      "@dealership-portal-ui": ["libs/dealership-portal/ui/src/index.ts"],
       "@dealership-portal/feature-dashboard": [
         "libs/dealership-portal/feature-dashboard/src/index.ts"
       ],
       "@dealership-portal/feature-home": [
         "libs/dealership-portal/feature-home/src/index.ts"
       ],
-      "@dealership-portal-ui": ["libs/dealership-portal/ui/src/index.ts"],
-      "@deal-configurator-mfe/feature-dealcard": [
-        "libs/deal-configurator-mfe/feature-dealcard/src/index.ts"
-      ],
-      "@deal-configurator-mfe/feature-insurance": [
-        "libs/deal-configurator-mfe/feature-insurance/src/index.ts"
-      ],
-      "@shared-ui-material-design": [
-        "libs/shared/ui/material-design/src/index.ts"
-      ],
-      "@shared-ui-formly": ["libs/shared/ui/formly-config/src/index.ts"],
-      "@shared-ui-custom-pipes": ["libs/shared/ui/custom-pipes/src/index.ts"],
-      "@shared-ui-components": [
-        "libs/shared/ui/shared-components/src/index.ts"
-      ],
       "@shared-core": ["libs/shared/core/src/index.ts"],
       "@shared-domain": ["libs/shared/domain/src/index.ts"],
       "@shared-domain-finance": [
         "libs/shared/domain/src/lib/finance/src/index.ts"
       ],
-      "@shared-translation": ["libs/shared/translation/src/index.ts"]
+      "@shared-translation": ["libs/shared/translation/src/index.ts"],
+      "@shared-ui-components": [
+        "libs/shared/ui/shared-components/src/index.ts"
+      ],
+      "@shared-ui-custom-pipes": ["libs/shared/ui/custom-pipes/src/index.ts"],
+      "@shared-ui-formly": ["libs/shared/ui/formly-config/src/index.ts"],
+      "@shared-ui-material-design": [
+        "libs/shared/ui/material-design/src/index.ts"
+      ]
     }
   },
   "angularCompilerOptions": {

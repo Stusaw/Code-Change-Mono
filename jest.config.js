@@ -16,5 +16,7 @@ module.exports = {
     '<rootDir>/libs/shared/ui/shared-components',
     '<rootDir>/libs/dealership-portal/ui',
     '<rootDir>/libs/deal-configurator-mfe/feature-insurance',
+    '<rootDir>/libs/deal-configurator-mfe/feature-finance',
+    '<rootDir>/libs/deal-configurator-mfe/feature-motor-insurance',
   ],
 };

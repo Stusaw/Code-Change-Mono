@@ -22,22 +22,6 @@
     }
   },
   "projects": {
-    "dealership-portal": {
-      "tags": []
-    },
-    "dealership-portal-e2e": {
-      "tags": [],
-      "implicitDependencies": ["dealership-portal"]
-    },
-    "dealership-portal-feature-dashboard": {
-      "tags": []
-    },
-    "dealership-portal-feature-home": {
-      "tags": []
-    },
-    "shared-ui-material-design": {
-      "tags": []
-    },
     "customer-portal": {
       "tags": []
     },
@@ -55,6 +39,31 @@
     "deal-configurator-mfe-feature-dealcard": {
       "tags": []
     },
+    "deal-configurator-mfe-feature-finance": {
+      "tags": []
+    },
+    "deal-configurator-mfe-feature-insurance": {
+      "tags": []
+    },
+    "deal-configurator-mfe-feature-motor-insurance": {
+      "tags": []
+    },
+    "dealership-portal": {
+      "tags": []
+    },
+    "dealership-portal-e2e": {
+      "tags": [],
+      "implicitDependencies": ["dealership-portal"]
+    },
+    "dealership-portal-feature-dashboard": {
+      "tags": []
+    },
+    "dealership-portal-feature-home": {
+      "tags": []
+    },
+    "dealership-portal-ui": {
+      "tags": []
+    },
     "shared-core": {
       "tags": []
     },
@@ -64,22 +73,19 @@
     "shared-domain-finance": {
       "tags": []
     },
-    "shared-ui-formly-config": {
-      "tags": []
-    },
     "shared-translation": {
       "tags": []
     },
     "shared-ui-custom-pipes": {
       "tags": []
     },
+    "shared-ui-formly-config": {
+      "tags": []
+    },
+    "shared-ui-material-design": {
+      "tags": []
+    },
     "shared-ui-shared-components": {
-      "tags": []
-    },
-    "dealership-portal-ui": {
-      "tags": []
-    },
-    "deal-configurator-mfe-feature-insurance": {
       "tags": []
     }
   }
