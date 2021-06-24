@@ -1,4 +1,6 @@
 <p>insurance works! {{ data.deal }}</p>
+<app-translate></app-translate>
+{{'global.actions.cancel' | translate}}
 <p>
     <a [routerLink]="['/dealcard', data.deal]" queryParamsHandling="preserve" routerLinkActive="router-link-active">Go
         to back</a>

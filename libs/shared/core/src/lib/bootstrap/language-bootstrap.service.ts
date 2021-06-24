@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../common';
 
 @Injectable({ providedIn: 'root' })
-export class TranslateLangService {
+export class LanguageBootstrapService {
   constructor(
     private injector: Injector,
     private translate: TranslateService,

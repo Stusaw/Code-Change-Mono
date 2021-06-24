@@ -1,9 +1,9 @@
 import { APP_INITIALIZER } from '@angular/core';
-import { TranslateLangService } from "../bootstrap/language-bootstrap.service";
+import { LanguageBootstrapService } from "../bootstrap/language-bootstrap.service";
 import { StartupBootstrapService } from '../bootstrap/startup-bootstrap.service';
 
 export function TranslateLangServiceFactory(
-  translateLangService: TranslateLangService
+  translateLangService: LanguageBootstrapService
 ) {
   return () => translateLangService.load();
 }
@@ -22,7 +22,7 @@ export const AppInitialiserProviders = [
   {
     provide: APP_INITIALIZER,
     useFactory: TranslateLangServiceFactory,
-    deps: [TranslateLangService],
+    deps: [LanguageBootstrapService],
     multi: true
   }
 ];

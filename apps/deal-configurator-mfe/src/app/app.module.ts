@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '@shared-core';
 import { TranslationModule } from '@shared-translation';
 import { environment } from '../environments/environment';
@@ -20,8 +21,8 @@ import { AppComponent } from './app.component';
     IonicModule.forRoot(),
     AppRoutingModule,
     TranslationModule,
-    // NgxSpinnerModule
   ],
+  exports: [TranslateModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

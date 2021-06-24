@@ -12,7 +12,7 @@ import {
   registerTranslateExtension
 } from '@shared-ui-formly';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { TranslateLangService as LanguageBootstrapService } from './bootstrap/language-bootstrap.service';
+import { LanguageBootstrapService } from './bootstrap/language-bootstrap.service';
 import { AppCommonServices } from './common';
 import { AppInitialiserProviders } from './initialisers/app-initialisers';
 import { DefaultInterceptor } from './interceptors/default-interceptor';
